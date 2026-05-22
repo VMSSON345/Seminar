@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RecipeRAG Seminar Slides</title>
+  <meta name="description" content="Slides for RecipeRAG: Knowledge Graph-Driven Personalized Recipe Retrieval and Generation" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="deck" id="deck">
+    <section class="slide title-slide" data-title="Title">
+      <div class="kicker">Seminar cuối kỳ · Ứng dụng AI trong Ngôn ngữ</div>
+      <h1>RecipeRAG</h1>
+      <h2>A Knowledge Graph-Driven Approach to Personalized Recipe Retrieval and Generation</h2>
+      <p class="authors">Julie Loesch · Emin Durmuş · Remzi Celebi</p>
+      <p class="note">Trình bày theo cấu trúc hội nghị: bối cảnh → vấn đề → dữ liệu → phương pháp → thí nghiệm → kết quả → kết luận.</p>
+    </section>
+
+    <section class="slide" data-title="Agenda">
+      <h2>Mục tiêu bài trình bày</h2>
+      <div class="grid two">
+        <div>
+          <h3>1. Hiểu bài toán</h3>
+          <p>Vì sao sinh công thức món ăn cá nhân hóa dưới nhiều ràng buộc là khó?</p>
+        </div>
+        <div>
+          <h3>2. Hiểu đóng góp</h3>
+          <p>RecipeKG + KGE retrieval + LLM generation tạo thành RecipeRAG.</p>
+        </div>
+        <div>
+          <h3>3. Đọc được thực nghiệm</h3>
+          <p>So sánh TransE, RotatE, QuatE với GTE-Large và MiniLM.</p>
+        </div>
+        <div>
+          <h3>4. Phản biện</h3>
+          <p>Đánh giá điểm mạnh, hạn chế, khả năng ứng dụng và hướng phát triển.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Problem">
+      <h2>Bối cảnh & vấn đề</h2>
+      <div class="big-quote">Người dùng không chỉ muốn “một món ăn ngon”, mà muốn món ăn phù hợp đồng thời với khẩu vị, sức khỏe, chế độ ăn, nguyên liệu sẵn có và văn hóa ẩm thực.</div>
+      <div class="grid three compact">
+        <div><h3>Đa mục tiêu</h3><p>Nhiều ràng buộc có thể xung đột: ít carb, giàu protein, ăn chay, nhanh, nguyên liệu cụ thể.</p></div>
+        <div><h3>Không chỉ keyword</h3><p>Khớp từ khóa không hiểu quan hệ giữa nguyên liệu, phương pháp nấu và dinh dưỡng.</p></div>
+        <div><h3>LLM dễ ảo giác</h3><p>Có thể sinh công thức thiếu bước, thay thế nguyên liệu không an toàn hoặc không khả thi.</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Gaps">
+      <h2>Khoảng trống nghiên cứu</h2>
+      <div class="flow four">
+        <div><span>1</span><b>Rule-based / single objective</b><p>Khó tối ưu nhiều tiêu chí cùng lúc.</p></div>
+        <div><span>2</span><b>Recipe editing</b><p>GISMo, SHARE hỗ trợ thay thế/chỉnh sửa nhưng còn hạn chế về độ chính xác, taste/function, tương tác.</p></div>
+        <div><span>3</span><b>LLM thuần</b><p>Thiếu tri thức có cấu trúc, độ tin cậy thấp khi yêu cầu phức tạp.</p></div>
+        <div><span>4</span><b>Text RAG thuần</b><p>Embedding văn bản khó biểu diễn ràng buộc tổ hợp có cấu trúc.</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Contributions">
+      <h2>Đóng góp chính của RecipeRAG</h2>
+      <div class="grid three">
+        <div class="highlight"><h3>RecipeKG</h3><p>Xây dựng knowledge graph từ Food.com, làm giàu bằng nhãn ngữ nghĩa về dinh dưỡng, chế độ ăn, vùng miền, bữa ăn, phương pháp nấu.</p></div>
+        <div class="highlight"><h3>KG-based RAG</h3><p>Truy hồi công thức từ knowledge graph rồi dùng LLM sinh công thức cá nhân hóa.</p></div>
+        <div class="highlight"><h3>Multi-criteria link prediction</h3><p>Biến recommendation thành bài toán dự đoán liên kết đa tiêu chí, thay vì chỉ so khớp trực tiếp query–recipe.</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Related Work">
+      <h2>Related Work: ba hướng chính</h2>
+      <div class="grid three compact">
+        <div><h3>Cooking instruction generation</h3><p>RecipeGPT, GPT-2, LLaVA-Chef, mô hình counterfactual và content planning tập trung sinh/chỉnh bước nấu.</p></div>
+        <div><h3>Ingredient selection</h3><p>Knowledge graph, embedding, Doc2Vec, LSTM/N-gram được dùng để gợi ý hoặc thay thế nguyên liệu.</p></div>
+        <div><h3>Constraint-based generation</h3><p>Chuyển đổi vùng miền, tối ưu dinh dưỡng, món chay, chỉnh sửa recipe theo ràng buộc.</p></div>
+      </div>
+      <p class="takeaway">Điểm khác biệt: RecipeRAG nhấn mạnh truy hồi bằng KG embedding cho nhiều tiêu chí cùng lúc, sau đó mới sinh bằng LLM.</p>
+    </section>
+
+    <section class="slide" data-title="Dataset">
+      <h2>Dữ liệu: Food.com → RecipeKG</h2>
+      <div class="stat-row">
+        <div><b>88,519</b><span>recipes sau khi loại null</span></div>
+        <div><b>6,754</b><span>recipes sau cân bằng nhãn</span></div>
+        <div><b>6</b><span>nhóm category chính</span></div>
+      </div>
+      <table>
+        <thead><tr><th>Category</th><th>Ý nghĩa</th><th>Ví dụ</th></tr></thead>
+        <tbody>
+          <tr><td>Cook Time</td><td>Thời gian cần để nấu</td><td>&lt; 30 phút</td></tr>
+          <tr><td>Recipe Servings</td><td>Số khẩu phần</td><td>1–4 servings</td></tr>
+          <tr><td>Diet Type</td><td>Chế độ ăn</td><td>Vegetarian, Lactose Free</td></tr>
+          <tr><td>Healthy Type</td><td>Đánh giá dinh dưỡng</td><td>High Protein, High Fat</td></tr>
+          <tr><td>Region</td><td>Phong cách ẩm thực</td><td>Asia</td></tr>
+          <tr><td>Meal Type</td><td>Loại bữa ăn</td><td>Breakfast, Lunch</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="slide" data-title="Criteria">
+      <h2>Không gian tiêu chí người dùng</h2>
+      <div class="chips">
+        <span>Protein level</span><span>Carb level</span><span>Fat level</span><span>Calorie level</span><span>Meal type</span><span>Diet type</span><span>Cuisine region</span><span>Cooking method</span><span>Ingredient</span><span>Cook time</span><span>Serving</span>
+      </div>
+      <p class="takeaway">Các tiêu chí vừa có dạng dinh dưỡng, vừa có dạng hành vi nấu ăn, vùng miền và nguyên liệu. Đây là lý do paper chọn biểu diễn có cấu trúc bằng knowledge graph.</p>
+    </section>
+
+    <section class="slide" data-title="Test Sets">
+      <h2>Ba tập đánh giá</h2>
+      <div class="grid three compact">
+        <div><h3>Retrieval Test Set 1</h3><p>Truy hồi theo tổ hợp tiêu chí từ 1 đến 5. Với tổ hợp lớn, dùng stratified sampling và Freedman–Diaconis rule để cân bằng phân phối số recipe khớp.</p></div>
+        <div><h3>Retrieval Test Set 2</h3><p>Truy hồi theo nguyên liệu. Lấy 412 nguyên liệu đại diện từ 1,646 nguyên liệu bằng quantile binning và stratified sampling.</p></div>
+        <div><h3>Generation Test Set</h3><p>Random tiêu chí từ test set retrieval, chọn 2–5 tiêu chí; với nguyên liệu chỉ dùng nhóm tần suất cao để sinh công thức.</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Dataset Scale">
+      <h2>Quy mô tổ hợp đánh giá</h2>
+      <table class="large-table">
+        <thead><tr><th>Set size</th><th>Criteria: all</th><th>Criteria: sampled</th><th>Ingredients: all</th><th>Ingredients: sampled</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>44</td><td>44</td><td>412</td><td>412</td></tr>
+          <tr><td>2</td><td>801</td><td>793</td><td>84,666</td><td>9,096</td></tr>
+          <tr><td>3</td><td>7,924</td><td>3,671</td><td>11,571,020</td><td>33,133</td></tr>
+          <tr><td>4</td><td>46,835</td><td>18,091</td><td>1,183,136,795</td><td>47,692</td></tr>
+          <tr><td>5</td><td>170,268</td><td>46,616</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <p class="takeaway">Độ khó tăng theo cấp số tổ hợp: càng nhiều tiêu chí, càng cần mô hình hiểu cấu trúc thay vì chỉ similarity văn bản.</p>
+    </section>
+
+    <section class="slide visual" data-title="Pipeline">
+      <h2>Methodology: tổng quan RecipeRAG</h2>
+      <img src="assets/fig1_workflow.png" alt="RecipeRAG workflow figure from paper" />
+      <p class="caption">Workflow gồm hai phần: KG-based retrieval để chọn Top-N recipe và LLM DeepSeek-R1-0528 để sinh recipe mới theo tiêu chí.</p>
+    </section>
+
+    <section class="slide visual" data-title="KG Schema">
+      <h2>RecipeKG schema</h2>
+      <img src="assets/fig2_kg_schema.png" alt="RecipeKG schema figure from paper" />
+      <p class="caption">Recipe là nút trung tâm, liên kết tới ingredient, region, diet type, meal type, cook time, nutrition levels, cooking method và nhiều thuộc tính khác.</p>
+    </section>
+
+    <section class="slide" data-title="Retrieval Algorithm">
+      <h2>Cơ chế truy hồi đa tiêu chí</h2>
+      <div class="equation">S<sub>i</sub> = Σ<sub>j=1..m</sub> f̂(r<sub>i</sub>, cr<sub>j</sub>, ce<sub>j</sub>)</div>
+      <div class="flow five">
+        <div><span>1</span><b>Train KGE</b><p>TransE, RotatE, QuatE học embedding cho entity/relation.</p></div>
+        <div><span>2</span><b>Query triples</b><p>Tạo triple giữa recipe candidate và từng tiêu chí.</p></div>
+        <div><span>3</span><b>Score</b><p>Dùng scoring function đánh giá plausibility.</p></div>
+        <div><span>4</span><b>Normalize</b><p>MinMax đưa điểm về [0,1] theo từng tiêu chí.</p></div>
+        <div><span>5</span><b>Aggregate</b><p>Cộng điểm để xếp hạng Top-N recipe.</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="KGE Models">
+      <h2>Các mô hình so sánh</h2>
+      <div class="grid three compact">
+        <div><h3>TransE</h3><p>Mô hình dịch chuyển: relation như phép tịnh tiến trong không gian embedding.</p></div>
+        <div><h3>RotatE</h3><p>Relation như phép quay trong không gian phức; paper dùng RotatE làm retrieval chính cho generation.</p></div>
+        <div><h3>QuatE</h3><p>Dùng quaternion để mã hóa entity và relation, mạnh trong biểu diễn quan hệ phức.</p></div>
+      </div>
+      <div class="grid two compact">
+        <div><h3>GTE-Large</h3><p>Baseline text embedding tổng quát, huấn luyện contrastive nhiều giai đoạn.</p></div>
+        <div><h3>MiniLM</h3><p>Sentence-transformers baseline, tối ưu cho semantic search và clustering.</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Metrics">
+      <h2>Thiết kế đánh giá</h2>
+      <div class="grid two">
+        <div class="highlight"><h3>Retrieval</h3><p><b>Hits@k</b>: tỉ lệ ví dụ dương xuất hiện trong top-k. <br/><b>MRR</b>: reciprocal rank trung bình của item liên quan đầu tiên.</p></div>
+        <div class="highlight"><h3>Generation</h3><p>LLM-as-a-judge dùng <b>Mistral Small 3.2 24B</b>, chấm 1–5 theo <b>Satisfiability</b> và <b>Feasibility</b>.</p></div>
+      </div>
+      <p class="takeaway">So sánh ba cấu hình generation: RAG(RotatE), RAG(MiniLM), No RAG.</p>
+    </section>
+
+    <section class="slide" data-title="Criteria Results">
+      <h2>Kết quả retrieval theo tiêu chí</h2>
+      <div class="chart-bars">
+        <div><label>RotatE · MRR 1 criterion</label><span style="--w:100%">100</span></div>
+        <div><label>QuatE · MRR 1 criterion</label><span style="--w:98.9%">98.9</span></div>
+        <div><label>RotatE · MRR 5 criteria</label><span style="--w:64.1%">64.1</span></div>
+        <div><label>QuatE · MRR 5 criteria</label><span style="--w:66.8%">66.8</span></div>
+        <div><label>GTE-Large · MRR 5 criteria</label><span style="--w:15.8%">15.8</span></div>
+        <div><label>MiniLM · MRR 5 criteria</label><span style="--w:4.5%">4.5</span></div>
+      </div>
+      <p class="takeaway">RotatE/QuatE vượt xa text embeddings, đặc biệt khi số tiêu chí tăng.</p>
+    </section>
+
+    <section class="slide" data-title="Ingredient Results">
+      <h2>Kết quả retrieval theo nguyên liệu</h2>
+      <div class="chart-bars">
+        <div><label>RotatE · MRR 1 ingredient</label><span style="--w:99.6%">99.6</span></div>
+        <div><label>QuatE · MRR 1 ingredient</label><span style="--w:93.9%">93.9</span></div>
+        <div><label>RotatE · MRR 4 ingredients</label><span style="--w:81.6%">81.6</span></div>
+        <div><label>QuatE · MRR 4 ingredients</label><span style="--w:61.7%">61.7</span></div>
+        <div><label>TransE · MRR 4 ingredients</label><span style="--w:16.7%">16.7</span></div>
+        <div><label>MiniLM · MRR 4 ingredients</label><span style="--w:1.7%">1.7</span></div>
+      </div>
+      <p class="takeaway">Ingredient retrieval khó hơn, nhưng RotatE vẫn giữ hiệu năng rất cao ở 3–4 nguyên liệu.</p>
+    </section>
+
+    <section class="slide" data-title="Generation Results">
+      <h2>Kết quả recipe generation</h2>
+      <table>
+        <thead><tr><th>Model</th><th>Feasibility</th><th>Satisfiability</th><th>Nhận xét</th></tr></thead>
+        <tbody>
+          <tr><td>RAG (RotatE)</td><td>4.01 ± 0.52</td><td><b>4.51 ± 0.50</b></td><td>Đáp ứng tiêu chí tốt nhất, ổn định nhất.</td></tr>
+          <tr><td>RAG (MiniLM)</td><td>3.81 ± 0.94</td><td>4.22 ± 0.88</td><td>Khá hơn No RAG về ổn định nhưng yếu hơn KG retrieval.</td></tr>
+          <tr><td>No RAG</td><td><b>4.04 ± 1.07</b></td><td>4.22 ± 1.03</td><td>Feasibility nhỉnh hơn một chút nhưng biến động lớn.</td></tr>
+        </tbody>
+      </table>
+      <p class="takeaway">KG-based retrieval giúp LLM bám sát tiêu chí hơn, dù LLM không truy hồi đôi khi vẫn sinh món “có vẻ dễ làm”.</p>
+    </section>
+
+    <section class="slide" data-title="Discussion">
+      <h2>Discussion: ý nghĩa kết quả</h2>
+      <div class="grid two">
+        <div><h3>Retrieval</h3><p>Hiệu năng giảm khi số tiêu chí tăng, chứng tỏ multi-criteria retrieval là bài toán khó. Tuy nhiên KGE vẫn giữ lợi thế lớn vì biểu diễn được quan hệ có cấu trúc.</p></div>
+        <div><h3>Generation</h3><p>RAG(RotatE) đạt satisfiability cao và variance thấp, cho thấy tri thức có cấu trúc giúp output nhất quán và phù hợp ràng buộc hơn.</p></div>
+      </div>
+      <p class="takeaway">Kết luận trung tâm: structured knowledge là thành phần quan trọng để làm RAG đáng tin cậy hơn trong tác vụ có nhiều ràng buộc.</p>
+    </section>
+
+    <section class="slide" data-title="Conclusion">
+      <h2>Kết luận paper</h2>
+      <div class="grid three compact">
+        <div><h3>RecipeRAG</h3><p>Kết hợp KG embeddings với LLM để sinh recipe cá nhân hóa.</p></div>
+        <div><h3>RecipeKG</h3><p>Xây từ Food.com, chứa quan hệ giữa recipe và các thuộc tính dinh dưỡng/ẩm thực.</p></div>
+        <div><h3>RotatE & QuatE</h3><p>Vượt TransE, GTE-Large, MiniLM, đặc biệt khi ràng buộc tăng.</p></div>
+      </div>
+      <p class="takeaway">RecipeRAG tạo cầu nối giữa recipe truyền thống và nhu cầu dinh dưỡng/cá nhân hóa đang thay đổi.</p>
+    </section>
+
+    <section class="slide" data-title="Critical Review">
+      <h2>Phản biện: điểm mạnh & hạn chế</h2>
+      <div class="grid two compact">
+        <div class="pros"><h3>Điểm mạnh</h3><p>Ý tưởng rõ, pipeline phù hợp KG-RAG, test retrieval có phân tầng độ khó, kết quả KGE rất thuyết phục, có so sánh với text embedding và No RAG.</p></div>
+        <div class="cons"><h3>Hạn chế</h3><p>Generation đánh giá bằng LLM-as-a-judge nên phụ thuộc judge; chưa có user study; RecipeKG chỉ từ Food.com; chưa phân tích sâu an toàn thực phẩm, allergy, chi phí, thời gian inference.</p></div>
+      </div>
+      <p class="takeaway">Câu hỏi Q&A nên xoáy vào: vì sao RotatE mạnh hơn, LLM judge có đáng tin không, KG có cập nhật được theo người dùng thật không?</p>
+    </section>
+
+    <section class="slide" data-title="Future Work">
+      <h2>Hướng phát triển</h2>
+      <div class="flow four">
+        <div><span>1</span><b>User feedback loop</b><p>Học từ đánh giá thực tế của người dùng.</p></div>
+        <div><span>2</span><b>Safety constraints</b><p>Dị ứng, tương tác thực phẩm, quy tắc an toàn.</p></div>
+        <div><span>3</span><b>Explainable retrieval</b><p>Giải thích vì sao recipe được chọn.</p></div>
+        <div><span>4</span><b>Dynamic KG</b><p>Cập nhật nguyên liệu, văn hóa, mùa vụ, giá cả.</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Presentation Checklist">
+      <h2>Checklist theo tiêu chí seminar</h2>
+      <div class="grid two compact">
+        <div><h3>Nội dung khoa học</h3><p>Làm rõ KG, KGE scoring, multi-criteria retrieval, vai trò của LLM.</p></div>
+        <div><h3>Trực quan hóa</h3><p>Dùng workflow, schema KG, bảng kết quả, biểu đồ MRR thay vì đọc nguyên văn paper.</p></div>
+        <div><h3>Tác phong</h3><p>20 phút: 3 phút bối cảnh, 5 phút dữ liệu, 6 phút phương pháp, 4 phút kết quả, 2 phút phản biện.</p></div>
+        <div><h3>Q&A</h3><p>Chuẩn bị câu trả lời về RotatE, RAG vs No RAG, LLM judge, hạn chế dataset.</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Q&A">
+      <h2>Q&A</h2>
+      <div class="big-quote">RecipeRAG cho thấy: khi yêu cầu người dùng là tổ hợp nhiều ràng buộc, tri thức có cấu trúc giúp RAG truy hồi đúng hơn và sinh kết quả ổn định hơn.</div>
+      <p class="authors">Cảm ơn thầy/cô và các bạn đã lắng nghe.</p>
+    </section>
+  </div>
+
+  <nav class="controls">
+    <button id="prev" aria-label="Previous slide">←</button>
+    <span id="counter">1 / 24</span>
+    <button id="next" aria-label="Next slide">→</button>
+  </nav>
+  <div class="progress"><span id="progressBar"></span></div>
+  <script src="script.js"></script>
+</body>
+</html>
