@@ -138,6 +138,178 @@ em{font-style:italic;color:var(--ink3)}
 }
 .num-label{font-family:var(--sans);font-size:.72em;color:var(--ink3);margin-top:2px}
 
+/* ── PROBLEM SETUP ── */
+.problem-grid{
+  display:grid;grid-template-columns:455px 1fr;gap:30px;align-items:stretch
+}
+.query-panel{
+  background:#fff;border:1.5px solid var(--rule);border-radius:6px;
+  padding:20px 22px 18px;position:relative
+}
+.query-panel::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--gold)
+}
+.mini-label{
+  font-family:var(--mono);font-size:.66em;font-weight:700;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--gold);margin-bottom:8px
+}
+.query-title{
+  font-family:var(--sans);font-size:1.08em;font-weight:700;line-height:1.26;color:var(--ink);margin-bottom:8px
+}
+.query-note{font-size:.8em;color:var(--ink3);margin-bottom:14px}
+.criteria-lines{display:flex;flex-direction:column;gap:8px}
+.criteria-line{
+  display:grid;grid-template-columns:112px 1fr;gap:10px;align-items:center;
+  border-top:1px solid var(--rule);padding-top:8px
+}
+.criteria-line span{
+  font-family:var(--mono);font-size:.64em;color:var(--ink3);letter-spacing:.04em
+}
+.criteria-line strong{
+  font-family:var(--sans);font-size:.84em;color:var(--ink);font-weight:700
+}
+.constraint-brace{
+  margin-top:16px;border-top:1.5px solid var(--navy);padding-top:12px;
+  font-family:var(--sans);font-size:.88em;color:var(--ink);line-height:1.35
+}
+.problem-right{display:flex;flex-direction:column;gap:14px;min-width:0}
+.formal-box{
+  border-top:2px solid var(--navy);border-bottom:1px solid var(--rule);
+  padding:15px 0 13px
+}
+.formal-box h3{margin-bottom:8px;color:var(--navy)}
+.formal-eq{
+  font-family:var(--sans);font-size:1.04em;font-weight:700;line-height:1.35;color:var(--ink);
+  margin-bottom:8px
+}
+.formal-eq code{font-size:.6em;color:var(--teal)}
+.formula-line{
+  font-family:var(--mono);font-size:1.06em;line-height:1.35;color:var(--navy);
+  background:#fff;border-left:4px solid var(--teal);padding:8px 12px;margin:8px 0 9px
+}
+.formal-box p{font-size:.82em;color:var(--ink3)}
+.failure-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px
+}
+.failure-item{
+  border-top:3px solid var(--red);background:var(--bg2);
+  padding:12px 12px 13px;min-height:126px
+}
+.failure-item:nth-child(2){border-top-color:var(--gold)}
+.failure-item:nth-child(3){border-top-color:var(--teal)}
+.failure-item h3{font-size:.68em;margin-bottom:7px;color:var(--ink)}
+.failure-item p{font-size:.74em;line-height:1.42;color:var(--ink3)}
+.solution-strip{
+  margin-top:auto;background:var(--navy);border-radius:6px;padding:14px 18px;
+  display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center
+}
+.solution-strip .mini-label{color:var(--gold-ll);margin:0}
+.solution-strip p{color:rgba(232,237,245,.86);font-size:.82em}
+.solution-strip strong{color:#fff}
+
+/* ── CONTRIBUTIONS ── */
+.contrib-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch
+}
+.contrib-card{
+  background:#fff;border:1.5px solid var(--rule);border-radius:6px;
+  padding:18px 18px 16px;min-height:310px;display:flex;flex-direction:column
+}
+.contrib-card:nth-child(1){border-top:4px solid var(--gold)}
+.contrib-card:nth-child(2){border-top:4px solid var(--teal)}
+.contrib-card:nth-child(3){border-top:4px solid var(--navy)}
+.contrib-type{
+  font-family:var(--mono);font-size:.64em;font-weight:700;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin-bottom:12px
+}
+.contrib-title{
+  font-family:var(--sans);font-size:1.04em;font-weight:800;
+  line-height:1.2;color:var(--ink);margin-bottom:9px
+}
+.contrib-card p{font-size:.8em;color:var(--ink2);line-height:1.47}
+.contrib-meta{
+  margin-top:auto;border-top:1px solid var(--rule);padding-top:10px
+}
+.contrib-meta span{
+  display:block;font-family:var(--mono);font-size:.62em;color:var(--gold);
+  letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px
+}
+.contrib-meta p{font-size:.72em;color:var(--ink3)}
+.contrib-takeaway{
+  margin-top:18px;background:var(--navy);border-radius:6px;
+  padding:14px 18px;display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:center
+}
+.contrib-takeaway .mini-label{color:var(--gold-ll);margin:0}
+.contrib-takeaway p{font-size:.82em;color:rgba(232,237,245,.88)}
+.contrib-takeaway strong{color:#fff}
+
+/* ── RELATED WORK MAP ── */
+.related-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch
+}
+.related-card{
+  background:#fff;border:1.5px solid var(--rule);border-radius:6px;
+  padding:18px 18px 16px;min-height:326px;display:flex;flex-direction:column
+}
+.related-card:nth-child(1){border-top:4px solid var(--gold)}
+.related-card:nth-child(2){border-top:4px solid var(--teal)}
+.related-card:nth-child(3){border-top:4px solid var(--red)}
+.related-type{
+  font-family:var(--mono);font-size:.64em;font-weight:700;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px
+}
+.related-title{
+  font-family:var(--sans);font-size:1.02em;font-weight:800;
+  line-height:1.22;color:var(--ink);margin-bottom:11px
+}
+.related-row{border-top:1px solid var(--rule);padding-top:9px;margin-top:9px}
+.related-row:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.related-row span{
+  display:block;font-family:var(--mono);font-size:.62em;color:var(--gold);
+  letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px
+}
+.related-row p{font-size:.76em;color:var(--ink2);line-height:1.43}
+.related-gap{
+  margin-top:auto;background:#fff8f8;border-left:4px solid var(--red);
+  padding:10px 12px;border-radius:4px
+}
+.related-gap span{
+  display:block;font-family:var(--mono);font-size:.62em;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:4px
+}
+.related-gap p{font-size:.74em;color:var(--ink2);line-height:1.42}
+
+/* ── DATA LIMITATIONS ── */
+.limit-compare{
+  display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch
+}
+.limit-panel{
+  border:1.5px solid var(--rule);border-radius:6px;background:#fff;
+  padding:18px 18px 16px;min-height:392px;display:flex;flex-direction:column
+}
+.limit-panel.problem{border-top:4px solid var(--red);background:#fffafa}
+.limit-panel.improve{border-top:4px solid var(--gold);background:#fffdf5}
+.limit-panel h3{margin-bottom:12px}
+.limit-list{display:flex;flex:1;flex-direction:column;justify-content:space-between;gap:10px}
+.limit-item{
+  display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;
+  border-top:1px solid var(--rule);padding-top:10px
+}
+.limit-item:first-child{border-top:none;padding-top:0}
+.limit-num{
+  font-family:var(--mono);font-size:.68em;font-weight:700;color:var(--ink3);
+  background:var(--bg3);border-radius:3px;text-align:center;padding:3px 0
+}
+.limit-item p{font-size:.78em;line-height:1.42;color:var(--ink2)}
+.limit-item strong{color:var(--ink)}
+.limit-message{
+  margin-top:16px;background:var(--navy);border-radius:6px;
+  padding:14px 18px;display:grid;grid-template-columns:145px 1fr;gap:16px;align-items:center
+}
+.limit-message .mini-label{color:var(--gold-ll);margin:0}
+.limit-message p{font-size:.84em;color:rgba(232,237,245,.9);line-height:1.45}
+.limit-message strong{color:#fff}
+
 /* ── TABLE ── */
 .tbl{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.76em}
 .tbl th{
@@ -432,13 +604,13 @@ em{font-style:italic;color:var(--ink3)}
   <ul class="agenda-list">
     <li>
       <div>
-        <div class="ag-title">Động lực và bài toán</div>
+        <div class="ag-title">Động lực nghiên cứu</div>
         <div class="ag-desc">Vì sao sinh công thức nấu ăn theo nhiều ràng buộc cùng lúc là bài toán khó; khoảng trống của các hệ thống hiện tại.</div>
       </div>
     </li>
     <li>
       <div>
-        <div class="ag-title">Nghiên cứu liên quan — ba hướng chính</div>
+        <div class="ag-title">Nghiên cứu liên quan</div>
         <div class="ag-desc">Sinh hướng dẫn nấu, chọn nguyên liệu, và sinh theo ràng buộc; vị trí của RecipeRAG trong các hướng nghiên cứu này.</div>
       </div>
     </li>
@@ -450,19 +622,19 @@ em{font-style:italic;color:var(--ink3)}
     </li>
     <li>
       <div>
-        <div class="ag-title">Phương pháp — truy hồi bằng đồ thị tri thức và sinh công thức</div>
+        <div class="ag-title">Phương pháp đề xuất</div>
         <div class="ag-desc">Chuyển tiêu chí thành bộ ba, chấm điểm bằng TransE/RotatE/QuatE, chuẩn hóa và cộng điểm, rồi sinh công thức bằng DeepSeek-R1.</div>
       </div>
     </li>
     <li>
       <div>
-        <div class="ag-title">Thí nghiệm và kết quả</div>
+        <div class="ag-title">Thực nghiệm và kết quả</div>
         <div class="ag-desc">Đánh giá truy hồi và đánh giá sinh công thức; nhúng đồ thị tri thức vượt nhúng văn bản, RotatE cho kết quả tốt nhất.</div>
       </div>
     </li>
     <li>
       <div>
-        <div class="ag-title">Phân tích, giới hạn và hướng phát triển</div>
+        <div class="ag-title">Thảo luận</div>
         <div class="ag-desc">Thảo luận phê phán: thiết kế thí nghiệm, quy mô dữ liệu, đánh giá sinh, câu hỏi phản biện.</div>
       </div>
     </li>
@@ -470,7 +642,7 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>2 / 30</span>
+  <span>2 / 29</span>
 </div>
 </div>
 
@@ -480,8 +652,8 @@ em{font-style:italic;color:var(--ink3)}
 <div class="slide" id="s3">
 <div class="part-slide">
   <div class="part-num">PHẦN 01 / 06</div>
-  <h1>Motivation</h1>
-  <p class="part-desc">Từ gợi ý món ăn đơn tiêu chí đến bài toán tổ hợp đa mục tiêu — và tại sao cả hệ luật lẫn mô hình ngôn ngữ lớn thuần túy đều chưa đủ.</p>
+  <h1>Động lực nghiên cứu</h1>
+  <p class="part-desc">Từ gợi ý món ăn đơn tiêu chí đến bài toán tổ hợp đa mục tiêu — và tại sao các phương pháp rule-based, tối ưu đơn mục tiêu, hoặc LLM thuần túy đều chưa đủ.</p>
 </div>
 </div>
 
@@ -489,59 +661,61 @@ em{font-style:italic;color:var(--ink3)}
      SLIDE 4 · PROBLEM SETUP
 ═══════════════════════════════════════════════════════ -->
 <div class="slide" id="s4">
-<div class="pad">
+  <div class="pad">
   <div class="slide-header">
-    <h2>Bài toán: cá nhân hóa công thức là tổ hợp đa mục tiêu</h2>
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Bài toán: xếp hạng công thức theo tập ràng buộc</h2>
     <span class="section-tag">§1 · động lực</span>
   </div>
-  <div class="col2" style="gap:18px">
-    <div class="vstack">
-      <p style="font-size:.85em">Người dùng không chỉ muốn "một công thức ngẫu nhiên" — họ muốn một công thức thỏa <strong>đồng thời</strong> nhiều tiêu chí thuộc các chiều khác nhau:</p>
-      <div class="col2" style="gap:10px">
-        <div class="card gold">
-          <h3>Dinh dưỡng</h3>
-          <p>Lượng protein, carb, fat, calorie — thường có ràng buộc xung đột (ít béo + giàu đạm).</p>
-        </div>
-        <div class="card teal">
-          <h3>Chế độ ăn</h3>
-          <p>Vegetarian, Vegan, Paleo, Lactose-Free — loại trừ toàn bộ lớp nguyên liệu.</p>
-        </div>
-        <div class="card navy">
-          <h3>Ngữ cảnh</h3>
-          <p>Bữa ăn (breakfast/dinner), thời gian nấu, phong cách ẩm thực vùng miền.</p>
-        </div>
-        <div class="card red">
-          <h3>Nguyên liệu</h3>
-          <p>Chỉ nấu với những gì sẵn có — bài toán tìm giao tập theo tổ hợp.</p>
-        </div>
+  <div class="problem-grid">
+    <div class="query-panel">
+      <div class="mini-label">Input · user criteria</div>
+      <div class="query-title">Một truy vấn không phải là một câu văn; nó là một tập ràng buộc có cấu trúc.</div>
+      <p class="query-note">Ví dụ người dùng cần món ăn vừa phù hợp sở thích, vừa khả thi theo nguyên liệu và ngữ cảnh.</p>
+      <div class="criteria-lines">
+        <div class="criteria-line"><span>Diet type</span><strong>Vegetarian / Vegan / Paleo</strong></div>
+        <div class="criteria-line"><span>Nutrition</span><strong>Low carb · High protein · Low fat</strong></div>
+        <div class="criteria-line"><span>Meal &amp; time</span><strong>Dinner · &lt; 30 minutes · 1-4 servings</strong></div>
+        <div class="criteria-line"><span>Region</span><strong>Mediterranean / East Asia / Global</strong></div>
+        <div class="criteria-line"><span>Ingredients</span><strong>Only what is available in the kitchen</strong></div>
+      </div>
+      <div class="constraint-brace">
+        C = {c<sub>1</sub>, c<sub>2</sub>, ..., c<sub>m</sub>} càng lớn thì số tổ hợp hợp lệ càng thưa.
       </div>
     </div>
-    <div class="vstack">
-      <div class="hbox">
-        <div class="hbox-label">Thách thức lõi</div>
-        <p>Không gian tổ hợp tăng theo cấp số nhân khi thêm tiêu chí. Tối ưu đơn mục tiêu không thể cân bằng các chiều ràng buộc xung đột.</p>
+
+    <div class="problem-right">
+      <div class="formal-box">
+        <h3>Công thức hóa bài toán</h3>
+        <div class="formal-eq">Mỗi tiêu chí được chuyển thành một bộ ba trong RecipeKG: <code>(recipe, relation, entity)</code></div>
+        <div class="formula-line">S(r<sub>i</sub>) = Σ<sub>j=1..m</sub> f̂(r<sub>i</sub>, c<sub>j</sub><sup>r</sup>, c<sub>j</sub><sup>e</sup>) → Top-N recipes</div>
+        <p>Điểm KGE được chuẩn hóa theo từng tiêu chí rồi cộng gộp, nên một tiêu chí mạnh không lấn át toàn bộ truy vấn.</p>
       </div>
-      <div class="card flat" style="margin-top:4px">
-        <h3>Tại sao không dùng LLM trực tiếp?</h3>
-        <ul style="margin-top:6px;padding-left:16px" class="vstack">
-          <li>Hallucinate nguyên liệu không tương thích hoặc bước nấu thiếu logic.</li>
-          <li>Không đảm bảo tất cả ràng buộc được thỏa — đặc biệt khi có &gt;3 tiêu chí.</li>
-          <li>Thiếu cơ chế kiểm chứng có cấu trúc từ nguồn dữ liệu thực.</li>
-        </ul>
+
+      <div class="failure-grid">
+        <div class="failure-item">
+          <h3>Single-objective optimization</h3>
+          <p>Dễ tối ưu theo một signal riêng lẻ, nhưng bỏ qua trade-off giữa nutrition, preference, cooking time và available ingredients.</p>
+        </div>
+        <div class="failure-item">
+          <h3>Text-embedding RAG</h3>
+          <p>Mạnh với semantic similarity, nhưng kém ổn định khi truy vấn là structured labels và relation type cần khớp chính xác.</p>
+        </div>
+        <div class="failure-item">
+          <h3>Direct LLM generation</h3>
+          <p>Sinh công thức trôi chảy, nhưng constraint satisfaction không được grounded trên một cấu trúc dữ liệu kiểm chứng được.</p>
+        </div>
       </div>
-      <div class="card flat">
-        <h3>Tại sao không dùng RAG nhúng văn bản thông thường?</h3>
-        <ul style="margin-top:6px;padding-left:16px" class="vstack">
-          <li>So khớp văn bản yếu khi truy vấn là <em>tổ hợp nhãn có cấu trúc</em>, không phải câu ngữ nghĩa.</li>
-          <li>Không tận dụng quan hệ giữa công thức, nguyên liệu và tiêu chí dinh dưỡng trong đồ thị tri thức.</li>
-        </ul>
+
+      <div class="solution-strip">
+        <div class="mini-label">RecipeRAG</div>
+        <p><strong>Đổi bài toán truy hồi thành dự đoán liên kết đa tiêu chí:</strong> chấm điểm từng bộ ba, chuẩn hóa theo từng tiêu chí, rồi cộng gộp để chọn Top-N công thức làm ngữ cảnh cho LLM.</p>
       </div>
     </div>
   </div>
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>4 / 30</span>
+  <span>4 / 29</span>
 </div>
 </div>
 
@@ -551,34 +725,46 @@ em{font-style:italic;color:var(--ink3)}
 <div class="slide" id="s5">
 <div class="pad">
   <div class="slide-header">
-    <h2>Đóng góp của bài báo</h2>
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Ba đóng góp chính của RecipeRAG</h2>
     <span class="section-tag">§1 · đóng góp</span>
   </div>
-  <div class="col3">
-    <div class="card gold" style="padding:20px 18px">
-      <h3>Đóng góp 1</h3>
-      <p style="font-family:var(--serif);font-size:1.05em;margin:10px 0 8px;color:var(--ink)"><strong>RecipeKG</strong></p>
-      <p>Đồ thị tri thức công thức nấu ăn xây từ Food.com, làm giàu thêm nhãn dinh dưỡng và tiêu chí ngữ nghĩa. Gồm 6,754 công thức sau cân bằng nhãn với các quan hệ đa chiều.</p>
+  <div class="contrib-grid">
+    <div class="contrib-card">
+      <div class="contrib-type">Đóng góp 01 · Dữ liệu</div>
+      <div class="contrib-title">RecipeKG: đồ thị tri thức công thức từ Food.com</div>
+      <p>Xây dựng một đồ thị tri thức mới từ Food.com, được làm giàu bằng nhãn ngữ nghĩa để biểu diễn quan hệ giữa công thức, nguyên liệu và tiêu chí người dùng.</p>
+      <div class="contrib-meta">
+        <span>Vai trò trong pipeline</span>
+        <p>Làm nguồn tri thức có cấu trúc cho bước truy hồi và kiểm tra ràng buộc.</p>
+      </div>
     </div>
-    <div class="card teal" style="padding:20px 18px">
-      <h3>Đóng góp 2</h3>
-      <p style="font-family:var(--serif);font-size:1.05em;margin:10px 0 8px;color:var(--ink)"><strong>Quy trình RecipeRAG</strong></p>
-      <p>Hệ RAG kết hợp truy hồi trên đồ thị tri thức bằng mô hình nhúng với sinh văn bản bằng mô hình ngôn ngữ lớn. Hai mô-đun truy hồi và sinh được tách rõ.</p>
+    <div class="contrib-card">
+      <div class="contrib-type">Đóng góp 02 · Khung hệ thống</div>
+      <div class="contrib-title">RAG dựa trên đồ thị tri thức để sinh công thức cá nhân hóa</div>
+      <p>Đề xuất RecipeRAG gồm hai mô-đun: truy hồi trên đồ thị tri thức để chọn Top-N công thức theo ràng buộc, sau đó mô hình ngôn ngữ lớn dùng các công thức này làm ngữ cảnh sinh.</p>
+      <div class="contrib-meta">
+        <span>Điểm khác với RAG thông thường</span>
+        <p>Truy hồi không dựa chủ yếu vào độ tương đồng văn bản, mà dựa trên cấu trúc quan hệ trong RecipeKG.</p>
+      </div>
     </div>
-    <div class="card navy" style="padding:20px 18px">
-      <h3>Đóng góp 3</h3>
-      <p style="font-family:var(--serif);font-size:1.05em;margin:10px 0 8px;color:#e8edf5"><strong>Dự đoán liên kết đa tiêu chí</strong></p>
-      <p style="color:rgba(232,237,245,.8)">Cách đặt bài toán mới: truy hồi không phải so khớp vector, mà là chấm độ hợp lý của bộ ba (công thức, quan hệ, tiêu chí) trên đồ thị tri thức.</p>
+    <div class="contrib-card">
+      <div class="contrib-type">Đóng góp 03 · Cách đặt bài toán truy hồi</div>
+      <div class="contrib-title">Multi-criteria link prediction for ranking recipes</div>
+      <p>Biến mỗi tiêu chí người dùng thành bộ ba <code>(công thức, quan hệ, thực thể)</code>, dùng KGE để ước lượng độ hợp lý, rồi tổng hợp điểm qua nhiều tiêu chí.</p>
+      <div class="contrib-meta">
+        <span>Điểm mới</span>
+        <p>Gợi ý công thức được đặt như bài toán dự đoán liên kết đa tiêu chí, thay vì chỉ so khớp độ tương đồng trực tiếp.</p>
+      </div>
     </div>
   </div>
-  <div class="hbox" style="margin-top:20px">
-    <div class="hbox-label">Ý tưởng lõi</div>
-    <p>Bằng cách biểu diễn từng tiêu chí người dùng như một quan hệ trong đồ thị tri thức, RecipeRAG có thể chấm điểm hợp lý của mỗi công thức với từng ràng buộc riêng biệt — sau đó cộng gộp để chọn công thức toàn diện nhất, thay vì chỉ tìm công thức "gần nhất" trong không gian văn bản.</p>
+  <div class="contrib-takeaway">
+    <div class="mini-label">Ý tưởng chính</div>
+    <p><strong>Đóng góp cốt lõi không chỉ là dùng mô hình ngôn ngữ lớn để sinh công thức.</strong> Điểm mới là đưa ràng buộc có cấu trúc vào đồ thị tri thức, chấm điểm bằng KGE, rồi dùng kết quả truy hồi để neo bước sinh công thức.</p>
   </div>
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>5 / 30</span>
+  <span>5 / 29</span>
 </div>
 </div>
 
@@ -599,55 +785,69 @@ em{font-style:italic;color:var(--ink3)}
 <div class="slide" id="s7">
 <div class="pad">
   <div class="slide-header">
-    <h2>Không gian nghiên cứu sinh công thức nấu ăn</h2>
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Nghiên cứu liên quan: ba hướng tiếp cận chính</h2>
     <span class="section-tag">§2 · nghiên cứu liên quan</span>
   </div>
-  <div class="col3">
-    <div class="card flat" style="padding:18px">
-      <h3>Nhánh A · Sinh hướng dẫn nấu</h3>
-      <ul class="num-list" style="margin-top:10px">
-        <li><p><strong>RecipeGPT</strong> <span class="cite">[8]</span> — tinh chỉnh GPT-2 để sinh nguyên liệu và hướng dẫn nấu.</p></li>
-        <li><p><strong>LLaVA-Chef</strong> <span class="cite">[11]</span> — mô hình đa phương thức: ảnh + văn bản, cải thiện chất lượng hướng dẫn.</p></li>
-        <li><p><strong>Lập kế hoạch từng bước</strong> <span class="cite">[14]</span> — sinh quy trình nấu có cấu trúc từ danh sách nguyên liệu chưa đầy đủ.</p></li>
-      </ul>
-      <div class="rbox" style="margin-top:10px">
-        <div class="rbox-label">Giới hạn</div>
-        <p>Tập trung sinh văn bản; chưa kiểm soát tốt ràng buộc dinh dưỡng hoặc chế độ ăn.</p>
+  <div class="related-grid">
+    <div class="related-card">
+      <div class="related-type">Nhánh 01</div>
+      <div class="related-title">Sinh hướng dẫn nấu ăn</div>
+      <div class="related-row">
+        <span>Mục tiêu</span>
+        <p>Sinh danh sách nguyên liệu và các bước nấu mạch lạc, đúng trình tự, dễ làm theo.</p>
+      </div>
+      <div class="related-row">
+        <span>Ví dụ tiêu biểu</span>
+        <p>RecipeGPT, GPT-2 trên RecipeDB, LLaVA-Chef, các mô hình lập kế hoạch từng bước.</p>
+      </div>
+      <div class="related-gap">
+        <span>Khoảng trống</span>
+        <p>Tạo văn bản tốt nhưng chưa kiểm soát chặt các ràng buộc như dinh dưỡng, chế độ ăn và tính phù hợp nguyên liệu.</p>
       </div>
     </div>
-    <div class="card flat" style="padding:18px">
-      <h3>Nhánh B · Chọn và thay thế nguyên liệu</h3>
-      <ul class="num-list" style="margin-top:10px">
-        <li><p><strong>NutRec</strong> <span class="cite">[16]</span> — mô hình nhúng dự đoán nguyên liệu lành mạnh hơn và ước lượng lượng dùng.</p></li>
-        <li><p><strong>Pini et al.</strong> <span class="cite">[15]</span> — đồ thị tri thức từ cơ sở dữ liệu thực phẩm, gợi ý tổ hợp nguyên liệu theo hồ sơ hương vị.</p></li>
-        <li><p><strong>Pan et al.</strong> <span class="cite">[17]</span> — Doc2Vec + độ tương đồng cosine để tìm nguyên liệu thay thế, sau đó dùng LSTM sinh công thức.</p></li>
-      </ul>
-      <div class="rbox" style="margin-top:10px">
-        <div class="rbox-label">Giới hạn</div>
-        <p>Chủ yếu tối ưu một tiêu chí (dinh dưỡng hoặc hương vị), không xét đồng thời nhiều chiều.</p>
+
+    <div class="related-card">
+      <div class="related-type">Nhánh 02</div>
+      <div class="related-title">Chọn và thay thế nguyên liệu</div>
+      <div class="related-row">
+        <span>Mục tiêu</span>
+        <p>Đề xuất nguyên liệu mới hoặc thay thế nguyên liệu để cải thiện dinh dưỡng, hương vị hoặc sự tương thích.</p>
+      </div>
+      <div class="related-row">
+        <span>Ví dụ tiêu biểu</span>
+        <p>NutRec, Pini et al. với đồ thị tri thức thực phẩm, Pan et al. với Doc2Vec và mô hình sinh công thức.</p>
+      </div>
+      <div class="related-gap">
+        <span>Khoảng trống</span>
+        <p>Thường tối ưu một chiều như sức khỏe hoặc hương vị; chưa giải quyết truy vấn đa tiêu chí ở mức công thức hoàn chỉnh.</p>
       </div>
     </div>
-    <div class="card flat" style="padding:18px">
-      <h3>Nhánh C · Sinh theo ràng buộc</h3>
-      <ul class="num-list" style="margin-top:10px">
-        <li><p><strong>SHARE</strong> <span class="cite">[3]</span> — hai encoder-decoder: thay nguyên liệu rồi sinh hướng dẫn mới. Chỉ xét tên món và nguyên liệu.</p></li>
-        <li><p><strong>Shirai et al.</strong> <span class="cite">[6]</span> — FoodKG hỗ trợ thay thế nguyên liệu bằng quan hệ ngữ nghĩa.</p></li>
-        <li><p><strong>Kazama et al.</strong> <span class="cite">[5]</span> — Word2Vec chuyển công thức sang phong cách ẩm thực vùng.</p></li>
-      </ul>
-      <div class="rbox" style="margin-top:10px">
-        <div class="rbox-label">Giới hạn</div>
-        <p>Mỗi hệ chủ yếu tối ưu một ràng buộc; thiếu xử lý đa tiêu chí và thiếu đánh giá sinh công thức có kiểm chứng.</p>
+
+    <div class="related-card">
+      <div class="related-type">Nhánh 03</div>
+      <div class="related-title">Sinh công thức theo ràng buộc</div>
+      <div class="related-row">
+        <span>Mục tiêu</span>
+        <p>Điều chỉnh hoặc sinh công thức theo yêu cầu như vùng ẩm thực, ăn chay, dinh dưỡng hoặc hạn chế nguyên liệu.</p>
+      </div>
+      <div class="related-row">
+        <span>Ví dụ tiêu biểu</span>
+        <p>SHARE, Shirai et al. với FoodKG, Kazama et al. với chuyển đổi phong cách ẩm thực vùng.</p>
+      </div>
+      <div class="related-gap">
+        <span>Khoảng trống</span>
+        <p>Thường chỉ xử lý một ràng buộc tại một thời điểm; thiếu cơ chế truy hồi có cấu trúc cho nhiều tiêu chí đồng thời.</p>
       </div>
     </div>
   </div>
-  <div class="hbox">
+  <div class="hbox" style="margin-top:16px">
     <div class="hbox-label">Vị trí của RecipeRAG</div>
-    <p>RecipeRAG đứng ở giao điểm cả ba nhánh: dùng đồ thị tri thức để truy hồi đa tiêu chí, sau đó dùng mô hình ngôn ngữ lớn để sinh hướng dẫn nấu có chất lượng.</p>
+    <p>RecipeRAG nối ba hướng này bằng một bước truy hồi dựa trên đồ thị tri thức: trước hết tìm công thức phù hợp nhiều ràng buộc, sau đó dùng mô hình ngôn ngữ lớn để sinh công thức cá nhân hóa.</p>
   </div>
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>7 / 30</span>
+  <span>7 / 29</span>
 </div>
 </div>
 
@@ -685,19 +885,19 @@ em{font-style:italic;color:var(--ink3)}
         </div>
       </div>
       <ol class="num-list">
-        <li><p><strong>Loại bỏ null:</strong> xóa công thức có giá trị null trong bất kỳ trường nào.</p></li>
+        <li><p><strong>Nguồn dữ liệu:</strong> Food.com Recipes and Reviews.</p></li>
+        <li><p><strong>Loại bỏ null:</strong> xóa các công thức có trường dữ liệu bị thiếu.</p></li>
         <li><p><strong>Gắn nhãn:</strong> tạo 6 nhóm nhãn từ thông tin dinh dưỡng và mô tả người dùng.</p></li>
-        <li><p><strong>Phân tích phân bố:</strong> phát hiện mất cân bằng lớp nặng giữa các nhãn.</p></li>
-        <li><p><strong>Gộp nhãn hiếm:</strong> hợp nhất các nhãn ít mẫu theo thuộc tính gần nhau.</p></li>
-        <li><p><strong>Lấy mẫu giảm:</strong> giảm mẫu của lớp quá đông để cân bằng phân phối.</p></li>
+        <li><p><strong>Cân bằng nhãn:</strong> gộp một số nhãn ít mẫu theo thuộc tính tương tự.</p></li>
+        <li><p><strong>Giảm mẫu lớp lớn:</strong> giảm số mẫu của các lớp quá đông để xây RecipeKG với 6,754 công thức.</p></li>
       </ol>
       <div class="rbox" style="margin-top:10px">
-        <div class="rbox-label">Điểm cần lưu ý khi phản biện</div>
-        <p>Từ 88K xuống 6,754 công thức — gần 92% dữ liệu bị loại bỏ. Bài báo không báo cáo chi tiết phân phối nhãn trước và sau, nên khó đánh giá tính đại diện của RecipeKG.</p>
+        <div class="rbox-label">Vấn đề</div>
+        <p>Mất cân bằng phân phối nhãn là lý do dẫn đến bước cân bằng dữ liệu, không phải một bước pipeline độc lập. Bài báo không báo cáo chi tiết phân phối nhãn trước/sau, nên khó đánh giá tính đại diện của RecipeKG.</p>
       </div>
     </div>
     <div>
-      <h3 style="margin-bottom:12px">6 loại quan hệ trong RecipeKG</h3>
+      <h3 style="margin-bottom:12px">6 loại thuộc tính trong RecipeKG</h3>
       <table class="tbl">
         <thead><tr><th>Nhóm</th><th>Ý nghĩa</th><th>Ví dụ giá trị</th></tr></thead>
         <tbody>
@@ -718,7 +918,7 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>9 / 30</span>
+  <span>9 / 29</span>
 </div>
 </div>
 
@@ -791,7 +991,7 @@ em{font-style:italic;color:var(--ink3)}
     <div class="grow vstack">
       <div class="card flat">
         <h3>Cách đọc lược đồ</h3>
-        <p style="margin-top:6px">Mỗi cạnh có hướng từ <strong>công thức → thực thể</strong> thông qua một <strong>quan hệ có tên</strong>. Khi người dùng cung cấp tiêu chí, hệ thống tạo bộ ba truy vấn <code>(r, relation, entity)</code> và hỏi KGE: "Bộ ba này có hợp lý không?"</p>
+        <p style="margin-top:6px">Mỗi cạnh có hướng từ <strong>công thức → thực thể</strong> thông qua một <strong>quan hệ có tên</strong>. Khi người dùng cung cấp tiêu chí, hệ thống tạo bộ ba truy vấn <code>(r, relation, entity)</code> và hỏi KGE: "Đánh giá mức độ phù hợp của truy vấn?"</p>
       </div>
       <div class="card flat">
         <h3>Ví dụ bộ ba trong KG</h3>
@@ -803,7 +1003,7 @@ em{font-style:italic;color:var(--ink3)}
         </div>
       </div>
       <div class="card flat">
-        <h3>8 loại tiêu chí người dùng có thể dùng</h3>
+        <h3>Ví dụ các quan hệ</h3>
         <div class="tag-row">
           <span class="tag">hasProteinLevel</span>
           <span class="tag">hasCarbLevel</span>
@@ -820,7 +1020,7 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>10 / 30</span>
+  <span>10 / 29</span>
 </div>
 </div>
 
@@ -830,35 +1030,27 @@ em{font-style:italic;color:var(--ink3)}
 <div class="slide" id="s11">
 <div class="pad">
   <div class="slide-header">
-    <h2>Ba bộ kiểm thử — thiết kế đánh giá theo độ khó</h2>
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Kiểm thử: đánh giá theo số lượng ràng buộc</h2>
     <span class="section-tag">§3.2–3.4 · dữ liệu đánh giá</span>
   </div>
   <div class="col3" style="align-items:start">
     <div class="card gold" style="padding:18px">
-      <h3>Bộ kiểm thử truy hồi 1</h3>
+      <h3>Test set 1</h3>
       <p style="margin-top:8px"><strong>Truy hồi theo tiêu chí</strong></p>
-      <p style="margin-top:4px">1 đến 5 tiêu chí kết hợp. Mỗi mức có 100 tổ hợp. Dùng liệt kê toàn bộ (1–2 tiêu chí) và lấy mẫu phân tầng theo quy tắc Freedman-Diaconis (3–5 tiêu chí).</p>
-      <div class="tag-row" style="margin-top:10px">
-        <span class="tag">1 tiêu chí: 44 tổ hợp</span>
-        <span class="tag">5 tiêu chí: 46,616 mẫu</span>
-      </div>
+      <p style="margin-top:4px">1 đến 5 tiêu chí kết hợp. Mỗi mức có khoảng 100 tổ hợp. Dùng liệt kê toàn bộ (1–2 tiêu chí) và lấy mẫu phân tầng theo quy tắc Freedman-Diaconis (3–5 tiêu chí).</p>
+      
     </div>
     <div class="card teal" style="padding:18px">
-      <h3>Bộ kiểm thử truy hồi 2</h3>
+      <h3>Test set 2</h3>
       <p style="margin-top:8px"><strong>Truy hồi theo nguyên liệu</strong></p>
-      <p style="margin-top:4px">1,646 nguyên liệu duy nhất → chọn 412 nguyên liệu đại diện bằng chia nhóm theo phân vị 16 bin (lấy mẫu 25% mỗi bin). Dùng chỉ mục đảo để tìm giao các tập công thức.</p>
-      <div class="tag-row" style="margin-top:10px">
-        <span class="tag">1 nguyên liệu: 412</span>
-        <span class="tag">4 nguyên liệu: 47,692</span>
-      </div>
+      <p style="margin-top:4px">Từ 1,646 nguyên liệu, tác giả thực hiện phân tầng theo phân vị (16 bins) và lấy mẫu đều từ mỗi bin để chọn 412 nguyên liệu đại diện. Truy hồi được thực hiện bằng cách sử dụng chỉ mục đảo để tính giao các tập công thức tương ứng.</p>
+      
     </div>
-    <div class="card navy" style="padding:18px">
-      <h3>Bộ kiểm thử sinh công thức</h3>
-      <p style="margin-top:8px;color:rgba(232,237,245,.9)"><strong>Đánh giá chất lượng sinh</strong></p>
-      <p style="color:rgba(232,237,245,.75);margin-top:4px">Chọn ngẫu nhiên từ hai bộ truy hồi. Số tiêu chí ngẫu nhiên từ 2 đến 5. Với nguyên liệu: chỉ dùng nhóm xuất hiện thường xuyên.</p>
-      <div class="tag-row" style="margin-top:10px">
-        <span class="tag" style="background:rgba(255,255,255,.12);color:rgba(232,237,245,.7);border-color:rgba(255,255,255,.15)">LLM chấm điểm</span>
-      </div>
+    <div class="card red" style="padding:18px">
+      <h3>Test set 3</h3>
+      <p style="margin-top:8px"><strong>Dùng cho đánh giá chất lượng sinh</strong></p>
+      <p style="margin-top:4px">Chọn ngẫu nhiên tiêu chí từ hai bộ truy hồi. Số tiêu chí trong mỗi truy vấn được lấy ngẫu nhiên từ 2 đến 5. Với truy vấn nguyên liệu, chỉ dùng nhóm nguyên liệu xuất hiện thường xuyên.</p>
+      
     </div>
   </div>
   <div style="margin-top:16px">
@@ -883,17 +1075,82 @@ em{font-style:italic;color:var(--ink3)}
     </table>
   </div>
   <p class="footnote">Freedman–Diaconis rule: bin width = 2·IQR·n<sup>−1/3</sup>. Dùng để xác định số bin tối ưu mà không cần chọn thủ công.</p>
+  
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>11 / 30</span>
+  <span>11 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 12 · PART TITLE — METHODOLOGY
+     SLIDE 12 · DATA EVALUATION LIMITATIONS
 ═══════════════════════════════════════════════════════ -->
 <div class="slide" id="s12">
+<div class="pad">
+  <div class="slide-header">
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Hạn chế của dữ liệu đánh giá</h2>
+    <span class="section-tag">§3.2–3.4 · phản biện dữ liệu</span>
+  </div>
+  <div class="limit-compare">
+    <div class="limit-panel problem">
+      <h3>Các điểm chưa thỏa đáng</h3>
+      <div class="limit-list">
+        <div class="limit-item">
+          <div class="limit-num">01</div>
+          <p><strong>Độ khó chưa đủ chặt:</strong> chỉ dựa vào số tiêu chí 1→5, chưa xét mâu thuẫn ràng buộc hoặc độ mơ hồ của kết quả.</p>
+        </div>
+        <div class="limit-item">
+          <div class="limit-num">02</div>
+          <p><strong>Sampling chưa giống thực tế:</strong> Freedman–Diaconis/binning phù hợp hơn với phân phối liên tục; lấy mẫu đều có thể làm méo phân phối truy vấn thật.</p>
+        </div>
+        <div class="limit-item">
+          <div class="limit-num">03</div>
+          <p><strong>Thiếu trường hợp không có lời giải:</strong> chỉ giữ query có ít nhất một recipe, nên chưa đánh giá constraint conflict và failure case thực tế.</p>
+        </div>
+        <div class="limit-item">
+          <div class="limit-num">04</div>
+          <p><strong>Filtering chưa minh bạch:</strong> RecipeKG giảm từ 88K xuống 6.7K nhưng không báo cáo phân phối trước/sau và tiêu chí loại bỏ chi tiết.</p>
+        </div>
+      </div>
+    </div>
+    <div class="limit-panel improve">
+      <h3>Hướng cải thiện dữ liệu và đánh giá</h3>
+      <div class="limit-list">
+        <div class="limit-item">
+          <div class="limit-num">01</div>
+          <p><strong>Định nghĩa lại độ khó:</strong> kết hợp số tiêu chí với constraint conflict, PMI/co-occurrence và match size.</p>
+        </div>
+        <div class="limit-item">
+          <div class="limit-num">02</div>
+          <p><strong>Sampling theo độ khó:</strong> stratify thành easy / medium / hard để phản ánh mức khó truy hồi, thay vì chỉ theo phân phối.</p>
+        </div>
+        <div class="limit-item">
+          <div class="limit-num">03</div>
+          <p><strong>Bổ sung test case thực tế:</strong> query mâu thuẫn, nguyên liệu hiếm long-tail, và tổ hợp chưa từng thấy/OOD.</p>
+        </div>
+        <div class="limit-item">
+          <div class="limit-num">04</div>
+          <p><strong>Minh bạch pipeline dữ liệu:</strong> báo cáo phân phối trước/sau filtering, sampling và ảnh hưởng của các bước này lên kết quả.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="limit-message">
+    <div class="mini-label">Kết luận</div>
+    <p><strong>Bộ test hiện tại đo tốt xu hướng khi số ràng buộc tăng,</strong> nhưng chưa đủ để kết luận hệ thống xử lý tốt các truy vấn khó trong thực tế.</p>
+  </div>
+</div>
+<div class="slide-footer">
+  <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
+  <span>12 / 29</span>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SLIDE 13 · PART TITLE — METHODOLOGY
+═══════════════════════════════════════════════════════ -->
+<div class="slide" id="s13">
 <div class="part-slide">
   <div class="part-num">PHẦN 04 / 06</div>
   <h1>Phương pháp — RecipeRAG</h1>
@@ -902,9 +1159,9 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 13 · PIPELINE OVERVIEW
+     SLIDE 14 · PIPELINE OVERVIEW
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s13">
+<div class="slide" id="s14">
 <div class="pad-sm">
   <div class="slide-header">
     <h2>Quy trình RecipeRAG — tổng quan</h2>
@@ -971,17 +1228,17 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>13 / 30</span>
+  <span>14 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 14 · KGE INTUITION
+     SLIDE 15 · KGE INTUITION
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s14">
+<div class="slide" id="s15">
 <div class="pad">
   <div class="slide-header">
-    <h2>Từ tiêu chí người dùng đến bộ ba KG — Ví dụ minh họa</h2>
+    <h2>Ví dụ minh họa</h2>
     <span class="section-tag">§4 · tạo bộ ba</span>
   </div>
   <div class="col2" style="align-items:start">
@@ -1046,17 +1303,17 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>14 / 30</span>
+  <span>15 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 15 · GENERATION MODULE
+     SLIDE 16 · GENERATION MODULE
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s15">
+<div class="slide" id="s16">
 <div class="pad">
   <div class="slide-header">
-    <h2>Mô-đun sinh công thức — từ truy hồi đến công thức hoàn chỉnh</h2>
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Mô-đun sinh công thức</h2>
     <span class="section-tag">§4 · sinh công thức</span>
   </div>
   <div class="col2" style="align-items:start">
@@ -1091,8 +1348,8 @@ em{font-style:italic;color:var(--ink3)}
         </div>
       </div>
       <div class="rbox">
-        <div class="rbox-label">Điểm cần phân tích kỹ</div>
-        <p>Mistral chấm điểm mà không cung cấp lý do giải thích. Không có độ đồng thuận giữa người chấm, không có chuyên gia dinh dưỡng đánh giá. Đây là giới hạn chính của phần đánh giá sinh công thức.</p>
+        <div class="rbox-label">Giới hạn của mô-đun sinh</div>
+        <p>Bài báo nêu dùng top-5 công thức làm ngữ cảnh cho DeepSeek-R1, nhưng chưa mô tả chi tiết prompt, cách xử lý khi ít kết quả phù hợp, hoặc độ nhạy của chất lượng sinh với lựa chọn top-5.</p>
       </div>
       <div class="hbox">
         <div class="hbox-label">Tại sao dùng LLM chấm điểm?</div>
@@ -1103,14 +1360,14 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>15 / 30</span>
+  <span>16 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 16 · PART TITLE — EXPERIMENTS
+     SLIDE 17 · PART TITLE — EXPERIMENTS
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s16">
+<div class="slide" id="s17">
 <div class="part-slide">
   <div class="part-num">PHẦN 05 / 06</div>
   <h1>Thí nghiệm &amp; Kết quả</h1>
@@ -1119,12 +1376,12 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 17 · METRICS
+     SLIDE 18 · METRICS
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s17">
+<div class="slide" id="s18">
 <div class="pad">
   <div class="slide-header">
-    <h2>Chỉ số đánh giá truy hồi — Hits@k và MRR</h2>
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Chỉ số đánh giá: Hits@k và MRR</h2>
     <span class="section-tag">§5.1 · chỉ số đánh giá</span>
   </div>
   <div class="col3" style="align-items:start">
@@ -1146,39 +1403,41 @@ em{font-style:italic;color:var(--ink3)}
     </div>
     <div class="card flat" style="padding:18px">
       <h3>Tại sao cần cả hai chỉ số?</h3>
-      <p style="margin-top:8px">Hits@k đo khả năng đưa kết quả đúng vào top-k; MRR đo vị trí của kết quả đúng đầu tiên. Một mô hình tốt cần cao cả hai.</p>
+      <p style="margin-top:8px">Hits@k đo việc kết quả đúng có lọt vào top-k hay không; MRR đo kết quả đúng đầu tiên xuất hiện sớm đến mức nào. Hai chỉ số bổ sung cho nhau.</p>
       <div class="hbox" style="margin-top:10px">
         <div class="hbox-label">Ngữ cảnh thực tế</div>
-        <p>Trong truy hồi công thức, người dùng thường chỉ xem top-3 đến top-5. MRR cao hơn Hits@10 về ý nghĩa thực tiễn.</p>
+        <p>Trong truy hồi công thức, người dùng thường chỉ xem vài kết quả đầu. Vì vậy MRR giúp phân biệt mô hình đưa kết quả đúng lên rất sớm với mô hình chỉ đưa đúng vào top-10.</p>
       </div>
     </div>
   </div>
   <div class="card flat" style="margin-top:16px">
     <h3>Các mô hình đối chứng</h3>
-    <div class="col4" style="margin-top:8px">
-      <div class="kv"><span class="k">TransE</span><span class="v">KGE tịnh tiến — mô hình KGE cổ điển.</span></div>
-      <div class="kv"><span class="k">RotatE</span><span class="v">KGE phép quay — rất mạnh trong truy hồi nguyên liệu.</span></div>
-      <div class="kv"><span class="k">QuatE</span><span class="v">KGE quaternion — cạnh tranh tốt với RotatE.</span></div>
-      <div class="kv"><span class="k">GTE-Large</span><span class="v">Mô hình nhúng văn bản đa dụng.</span></div>
-    </div>
-    <div style="margin-top:8px">
-      <div class="kv"><span class="k">MiniLM</span><span class="v">all-MiniLM-L6-v2 từ sentence-transformers — tối ưu cho tìm kiếm ngữ nghĩa, đại diện cho RAG nhúng văn bản.</span></div>
+    <div class="col2" style="margin-top:8px;gap:18px">
+      <div>
+        <div class="kv"><span class="k">TransE</span><span class="v">Nhúng đồ thị tri thức dạng tịnh tiến.</span></div>
+        <div class="kv"><span class="k">RotatE</span><span class="v">Nhúng quan hệ bằng phép quay trong không gian phức.</span></div>
+        <div class="kv"><span class="k">QuatE</span><span class="v">Nhúng thực thể và quan hệ bằng quaternion.</span></div>
+      </div>
+      <div>
+        <div class="kv"><span class="k">GTE-Large</span><span class="v">Baseline nhúng văn bản đa dụng.</span></div>
+        <div class="kv"><span class="k">MiniLM</span><span class="v">Baseline sentence-transformers cho tìm kiếm ngữ nghĩa và RAG nhúng văn bản.</span></div>
+      </div>
     </div>
   </div>
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>17 / 30</span>
+  <span>18 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 18 · RESULTS TABLE — TEST SET 1 (criteria)
+     SLIDE 19 · RESULTS TABLE — TEST SET 1 (criteria)
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s18">
+<div class="slide" id="s19">
 <div class="pad-sm">
   <div class="slide-header">
-    <h2>Kết quả bộ kiểm thử 1 — truy hồi theo tiêu chí (Bảng 4)</h2>
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Kết quả bộ kiểm thử 1 — truy hồi theo tiêu chí (Bảng 4)</h2>
     <span class="section-tag">§6.1 · truy hồi theo tiêu chí</span>
   </div>
   <p style="font-size:.78em;margin-bottom:10px;color:var(--ink3)">Tất cả giá trị tính theo %. <strong>In đậm xanh</strong> = tốt nhất trong cột. Xem xu hướng theo số tiêu chí tăng từ 1 đến 5.</p>
@@ -1229,41 +1488,43 @@ em{font-style:italic;color:var(--ink3)}
       </tr>
     </tbody>
   </table>
-  <div class="col2" style="margin-top:12px;gap:12px">
+  <div style="margin-top:12px">
     <table class="tbl" style="font-size:.72em">
       <thead>
         <tr>
-          <th>Model</th>
-          <th>H@1 (4tc)</th><th>H@5 (4tc)</th><th>MRR (4tc)</th>
-          <th>H@1 (5tc)</th><th>H@5 (5tc)</th><th>MRR (5tc)</th>
+          <th rowspan="2">Model</th>
+          <th colspan="4" style="border-bottom:1px solid rgba(255,255,255,.2);text-align:center">4 tiêu chí</th>
+          <th colspan="4" style="border-bottom:1px solid rgba(255,255,255,.2);text-align:center">5 tiêu chí</th>
+        </tr>
+        <tr>
+          <th>H@1</th><th>H@5</th><th>H@10</th><th>MRR</th>
+          <th>H@1</th><th>H@5</th><th>H@10</th><th>MRR</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="hi-row"><td>QuatE</td><td class="best">75.5</td><td>87.6</td><td class="best">81.1</td><td class="best">57.7</td><td class="best">77.7</td><td class="best">66.8</td></tr>
-        <tr class="hi-row"><td>RotatE</td><td>72.2</td><td class="best">88.5</td><td>79.4</td><td>52.9</td><td>77.8</td><td>64.1</td></tr>
-        <tr><td>TransE</td><td>48.1</td><td>70.5</td><td>58.3</td><td>34.6</td><td>58.7</td><td>45.8</td></tr>
-        <tr><td>GTE-Large</td><td class="worst">16.4</td><td class="worst">33.3</td><td class="worst">24.9</td><td class="worst">9.4</td><td class="worst">21.5</td><td class="worst">15.8</td></tr>
-        <tr><td>MiniLM</td><td>4.9</td><td>14.0</td><td>0.0</td><td>1.8</td><td>6.0</td><td>4.5</td></tr>
+        <tr class="hi-row"><td>QuatE</td><td class="best">75.5</td><td>87.6</td><td>90.9</td><td class="best">81.1</td><td class="best">57.7</td><td>77.7</td><td>83.8</td><td class="best">66.8</td></tr>
+        <tr class="hi-row"><td>RotatE</td><td>72.2</td><td class="best">88.5</td><td class="best">91.8</td><td>79.4</td><td>52.9</td><td class="best">77.8</td><td class="best">83.9</td><td>64.1</td></tr>
+        <tr><td>TransE</td><td>48.1</td><td>70.5</td><td>77.2</td><td>58.3</td><td>34.6</td><td>58.7</td><td>67.5</td><td>45.8</td></tr>
+        <tr><td>GTE-Large</td><td>16.4</td><td>33.3</td><td>41.9</td><td>24.9</td><td>9.4</td><td>21.5</td><td>28.5</td><td>15.8</td></tr>
+        <tr><td>MiniLM</td><td class="worst">4.9</td><td class="worst">14.0</td><td class="worst">20.3</td><td class="worst">0.0</td><td class="worst">1.8</td><td class="worst">6.0</td><td class="worst">9.3</td><td class="worst">4.5</td></tr>
       </tbody>
     </table>
-    <div class="vstack">
-      <div class="hbox" style="margin-top:0">
-        <div class="hbox-label">Kết luận chính</div>
-        <p>RotatE đạt MRR=100 với 1 tiêu chí. Khi tăng lên 5 tiêu chí, QuatE (66.8) nhỉnh hơn RotatE (64.1). MiniLM sụp hẳn từ MRR=85.2 xuống 4.5 — khoảng cách 18×.</p>
-      </div>
+    <div class="hbox" style="margin-top:10px">
+      <div class="hbox-label">Kết luận chính</div>
+      <p>RotatE đạt MRR=100 với 1 tiêu chí. Khi tăng lên 5 tiêu chí, QuatE có MRR cao hơn (66.8 so với 64.1), trong khi RotatE nhỉnh hơn ở H@5 và H@10. MiniLM giảm mạnh từ MRR=85.2 xuống 4.5 — khoảng cách khoảng 18×.</p>
     </div>
   </div>
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>18 / 30</span>
+  <span>19 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 19 · RESULTS TABLE — TEST SET 2 (ingredient)
+     SLIDE 20 · RESULTS TABLE — TEST SET 2 (ingredient)
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s19">
+<div class="slide" id="s20">
 <div class="pad">
   <div class="slide-header">
     <h2>Kết quả bộ kiểm thử 2 — truy hồi theo nguyên liệu (Bảng 5)</h2>
@@ -1330,14 +1591,14 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>19 / 30</span>
+  <span>20 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 20 · MRR TREND CHART
+     SLIDE 21 · MRR TREND CHART
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s20">
+<div class="slide" id="s21">
 <div class="pad">
   <div class="slide-header">
     <h2>Xu hướng MRR theo số tiêu chí — KGE so với nhúng văn bản</h2>
@@ -1425,17 +1686,17 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>20 / 30</span>
+  <span>21 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 21 · GENERATION RESULTS
+     SLIDE 22 · GENERATION RESULTS
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s21">
+<div class="slide" id="s22">
 <div class="pad">
   <div class="slide-header">
-    <h2>Kết quả sinh công thức — độ thỏa ràng buộc và tính khả thi (Bảng 6)</h2>
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Kết quả sinh công thức — độ thỏa ràng buộc và tính khả thi (Bảng 6)</h2>
     <span class="section-tag">§6.2 · kết quả sinh công thức</span>
   </div>
   <div class="col2" style="align-items:start;gap:22px">
@@ -1523,25 +1784,25 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>21 / 30</span>
+  <span>22 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 22 · PART TITLE — ANALYSIS & LIMITS
-═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s22">
-<div class="part-slide">
-  <div class="part-num">PHẦN 06 / 06</div>
-  <h1>Phân tích, giới hạn và hướng mở</h1>
-  <p class="part-desc">Nhìn lại bài báo theo hướng seminar: kết quả mạnh ở đâu, giới hạn nào cần lưu ý, và nên chuẩn bị câu hỏi phản biện nào.</p>
-</div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 23 · STRENGTHS
+     SLIDE 23 · PART TITLE — ANALYSIS
 ═══════════════════════════════════════════════════════ -->
 <div class="slide" id="s23">
+<div class="part-slide">
+  <div class="part-num">PHẦN 06 / 06</div>
+  <h1>Phân tích và hướng mở</h1>
+  <p class="part-desc">Nhìn lại bài báo theo hướng seminar: điểm mạnh nằm ở đâu, các giới hạn đã xuất hiện trong từng phần dẫn tới hướng phát triển nào.</p>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SLIDE 24 · STRENGTHS
+═══════════════════════════════════════════════════════ -->
+<div class="slide" id="s24">
 <div class="pad">
   <div class="slide-header">
     <h2>Điểm mạnh của bài báo</h2>
@@ -1580,137 +1841,17 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>23 / 30</span>
+  <span>24 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 24 · LIMITATIONS
-═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s24">
-<div class="pad">
-  <div class="slide-header">
-    <h2>Giới hạn — Những điểm chưa được giải quyết thỏa đáng</h2>
-    <span class="section-tag">§7 · giới hạn</span>
-  </div>
-  <div class="col2" style="align-items:start">
-    <div class="vstack">
-      <div class="rbox" style="margin-top:0">
-        <div class="rbox-label">L1 · Mất dữ liệu lớn khi cân bằng nhãn</div>
-        <p>Từ 88,519 → 6,754 công thức (~92% bị loại). Bài báo không báo cáo phân phối nhãn trước/sau, không phân tích ảnh hưởng của việc mất dữ liệu lên huấn luyện KGE. RecipeKG có thể chưa đại diện đủ cho độ đa dạng thực sự của Food.com.</p>
-      </div>
-      <div class="rbox">
-        <div class="rbox-label">L2 · LLM chấm điểm thiếu kiểm chứng</div>
-        <p>Mistral Small 3.2 24B chấm điểm không có giải thích, không có độ đồng thuận giữa nhiều người chấm, không có chuyên gia dinh dưỡng đánh giá. Không rõ mô hình chấm có thiên lệch với phong cách công thức nhất định không.</p>
-      </div>
-      <div class="rbox">
-        <div class="rbox-label">L3 · Chưa có nghiên cứu người dùng</div>
-        <p>Không có người dùng thật đánh giá công thức. Tính khả thi theo LLM chấm điểm không đồng nghĩa với tính khả thi của người nấu ăn tại nhà. An toàn dinh dưỡng cũng chưa được kiểm tra.</p>
-      </div>
-    </div>
-    <div class="vstack">
-      <div class="rbox" style="margin-top:0">
-        <div class="rbox-label">L4 · Cơ chế xử lý ràng buộc xung đột</div>
-        <p>Bài báo không mô tả rõ hệ xử lý thế nào khi các tiêu chí mâu thuẫn, ví dụ nhiều chất béo nhưng ít calorie. Cộng điểm sau MinMax chưa có cơ chế phát hiện hoặc giải quyết xung đột.</p>
-      </div>
-      <div class="rbox">
-        <div class="rbox-label">L5 · Chi tiết sinh công thức còn thiếu</div>
-        <p>Bài báo nêu dùng top-5 công thức làm ngữ cảnh cho DeepSeek-R1, nhưng chưa mô tả chi tiết prompt, cách chọn ví dụ trong trường hợp ít kết quả phù hợp, và ảnh hưởng của các lựa chọn này lên chất lượng sinh.</p>
-      </div>
-      <div class="card flat">
-        <h3>Điểm nhỏ hơn nhưng nên nhắc</h3>
-        <ul style="margin-top:6px;padding-left:16px;font-size:.82em" class="vstack">
-          <li>Tại sao TransE thấp bất ngờ ở truy hồi theo nguyên liệu (MRR=27.2 cho 1 nguyên liệu)?</li>
-          <li>Tính khả thi của Không RAG (4.04) nhỉnh hơn RotatE RAG (4.01) — bài báo không phân tích nguyên nhân.</li>
-          <li>Mô hình sinh DeepSeek-R1-0528 chưa được phân tích thay thế bằng mô hình khác.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="slide-footer">
-  <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>24 / 30</span>
-</div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 25 · RESEARCH QUESTIONS FOR QA
+     SLIDE 25 · FUTURE DIRECTIONS
 ═══════════════════════════════════════════════════════ -->
 <div class="slide" id="s25">
 <div class="pad">
   <div class="slide-header">
-    <h2>Câu hỏi phản biện nên chuẩn bị</h2>
-    <span class="section-tag">§7 · câu hỏi phản biện</span>
-  </div>
-  <div class="col2" style="align-items:start">
-    <div class="vstack">
-      <div class="card flat" style="padding:18px">
-        <h3>Q1 · Về phương pháp</h3>
-        <p style="margin-top:8px"><em>"Vì sao RotatE mạnh ở truy hồi nguyên liệu, còn QuatE nhỉnh hơn ở truy hồi 3–5 tiêu chí?"</em></p>
-        <div class="hbox" style="margin-top:8px">
-          <div class="hbox-label">Gợi ý trả lời</div>
-          <p>Bài báo chưa phân tích sâu. Có thể RotatE hợp quan hệ 1-N như công thức-nguyên liệu, còn QuatE hợp hơn với quan hệ phân loại nhiều-nhiều.</p>
-        </div>
-      </div>
-      <div class="card flat" style="padding:18px">
-        <h3>Q2 · Về dữ liệu</h3>
-        <p style="margin-top:8px"><em>"Giảm từ 88K xuống 6,754 công thức ảnh hưởng gì đến tính đại diện của RecipeKG?"</em></p>
-        <div class="hbox" style="margin-top:8px">
-          <div class="hbox-label">Gợi ý trả lời</div>
-          <p>Đây là giới hạn chính. Bài báo không báo cáo mức phủ theo vùng ẩm thực sau cân bằng dữ liệu.</p>
-        </div>
-      </div>
-      <div class="card flat" style="padding:18px">
-        <h3>Q3 · Về cộng gộp điểm</h3>
-        <p style="margin-top:8px"><em>"MinMax sum xử lý thế nào khi có tiêu chí bắt buộc và tiêu chí chỉ là ưu tiên?"</em></p>
-        <div class="hbox" style="margin-top:8px">
-          <div class="hbox-label">Gợi ý trả lời</div>
-          <p>Cần cộng gộp có trọng số hoặc bộ lọc ràng buộc cứng. Bài báo chưa đề xuất cơ chế này.</p>
-        </div>
-      </div>
-    </div>
-    <div class="vstack">
-      <div class="card flat" style="padding:18px">
-        <h3>Q4 · Về đánh giá</h3>
-        <p style="margin-top:8px"><em>"LLM chấm điểm có đánh giá được an toàn dinh dưỡng không?"</em></p>
-        <div class="hbox" style="margin-top:8px">
-          <div class="hbox-label">Gợi ý trả lời</div>
-          <p>Không đáng tin cậy nếu không có chuyên gia hoặc người dùng thật kiểm chứng. Đây là bước tiếp theo cần bổ sung.</p>
-        </div>
-      </div>
-      <div class="card flat" style="padding:18px">
-        <h3>Q5 · Về khả năng khái quát</h3>
-        <p style="margin-top:8px"><em>"Quy trình này có áp dụng được sang miền khác không?"</em></p>
-        <div class="hbox" style="margin-top:8px">
-          <div class="hbox-label">Gợi ý trả lời</div>
-          <p>Có thể, nếu miền đó có đồ thị tri thức và quan hệ ràng buộc rõ ràng. Miền phức tạp hơn cần KG giàu hơn.</p>
-        </div>
-      </div>
-      <div class="card flat" style="padding:18px">
-        <h3>Q6 · Về khả năng mở rộng</h3>
-        <p style="margin-top:8px"><em>"Nếu RecipeKG có hàng triệu công thức, truy hồi còn đủ nhanh không?"</em></p>
-        <div class="hbox" style="margin-top:8px">
-          <div class="hbox-label">Gợi ý trả lời</div>
-          <p>Bài báo chưa bàn về độ trễ. Cần tính trước embedding và dùng chỉ mục gần đúng để mở rộng.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="slide-footer">
-  <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>25 / 30</span>
-</div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════
-     SLIDE 26 · FUTURE DIRECTIONS
-═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s26">
-<div class="pad">
-  <div class="slide-header">
-    <h2>Hướng mở rộng — Nếu tiếp tục nghiên cứu</h2>
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Hướng phát triển tương lai</h2>
     <span class="section-tag">§7 · hướng phát triển</span>
   </div>
   <div class="col3" style="align-items:start">
@@ -1752,14 +1893,14 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>26 / 30</span>
+  <span>25 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 27 · SUMMARY TABLE
+     SLIDE 26 · SUMMARY TABLE
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s27">
+<div class="slide" id="s26">
 <div class="pad">
   <div class="slide-header">
     <h2>Tổng kết</h2>
@@ -1809,14 +1950,14 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>27 / 30</span>
+  <span>26 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 28 · RECIPERAG VS TEXT RAG COMPARISON
+     SLIDE 27 · RECIPERAG VS TEXT RAG COMPARISON
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s28">
+<div class="slide" id="s27">
 <div class="pad">
   <div class="slide-header">
     <h2>RecipeRAG so với RAG nhúng văn bản — so sánh thiết kế</h2>
@@ -1853,14 +1994,14 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>28 / 30</span>
+  <span>27 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 29 · REFERENCES
+     SLIDE 28 · REFERENCES
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s29">
+<div class="slide" id="s28">
 <div class="pad">
   <div class="slide-header">
     <h2>Tài liệu tham khảo chính</h2>
@@ -1909,19 +2050,19 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>29 / 30</span>
+  <span>28 / 29</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 30 · CLOSING
+     SLIDE 29 · CLOSING
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s30">
+<div class="slide" id="s29">
 <div class="cover" style="justify-content:center;text-align:center;padding:56px">
   <div class="conference-tag" style="justify-content:center">
     <span class="conf-badge">RAGE-KG 2025</span>
   </div>
-  <h1 style="text-align:center;max-width:100%;font-size:2.4em">Cảm ơn đã lắng nghe</h1>
+  <h1 style="font-family:var(--sans);font-weight:700;text-align:center;max-width:100%;font-size:2.35em">Cảm ơn đã lắng nghe</h1>
   <p class="subtitle" style="text-align:center;margin:14px auto 0;max-width:600px">Mời đặt câu hỏi, thảo luận và phản biện về RecipeRAG.</p>
   <div class="divider-line" style="margin:28px auto"></div>
   <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap">
