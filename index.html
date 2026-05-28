@@ -425,6 +425,36 @@ em{font-style:italic;color:var(--ink3)}
 .exp-limit-bottom p{font-size:.84em;color:rgba(232,237,245,.9);line-height:1.45}
 .exp-limit-bottom strong{color:#fff}
 
+/* ── METHOD REVIEW ── */
+.method-review-grid{
+  display:grid;grid-template-columns:1fr 1.12fr;gap:22px;align-items:stretch
+}
+.method-review-panel{
+  background:#fff;border:1.5px solid var(--rule);border-radius:6px;
+  border-top:4px solid var(--teal);padding:18px 18px 16px
+}
+.method-review-panel.weak{border-top-color:var(--red);background:#fffafa}
+.method-review-panel h3{font-size:.98em;margin-bottom:12px}
+.method-review-list{display:flex;flex-direction:column;gap:10px}
+.method-review-item{
+  display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;
+  border-top:1px solid var(--rule);padding-top:10px
+}
+.method-review-item:first-child{border-top:none;padding-top:0}
+.method-review-num{
+  font-family:var(--mono);font-size:.66em;font-weight:700;color:var(--ink3);
+  background:var(--bg3);border-radius:3px;text-align:center;padding:3px 0
+}
+.method-review-item p{font-size:.78em;line-height:1.42;color:var(--ink2)}
+.method-review-item strong{color:var(--ink)}
+.method-review-bottom{
+  margin-top:16px;background:var(--navy);border-radius:6px;
+  padding:14px 18px;display:grid;grid-template-columns:145px 1fr;gap:16px;align-items:center
+}
+.method-review-bottom .mini-label{color:var(--gold-ll);margin:0}
+.method-review-bottom p{font-size:.84em;color:rgba(232,237,245,.9);line-height:1.45}
+.method-review-bottom strong{color:#fff}
+
 /* ── FINAL SUMMARY ── */
 .final-summary{
   display:grid;grid-template-columns:430px 1fr;gap:24px;align-items:stretch
@@ -777,7 +807,7 @@ em{font-style:italic;color:var(--ink3)}
     <li>
       <div>
         <div class="ag-title">Thực nghiệm và kết quả</div>
-        <div class="ag-desc">Đánh giá truy hồi và đánh giá sinh công thức; nhúng đồ thị tri thức vượt nhúng văn bản, RotatE cho kết quả tốt nhất.</div>
+        <div class="ag-desc">Đánh giá truy hồi và đánh giá sinh công thức; nhúng đồ thị tri thức vượt Text Embeddings, RotatE cho kết quả tốt nhất.</div>
       </div>
     </li>
     <li>
@@ -790,7 +820,7 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>2 / 26</span>
+  <span>2 / 27</span>
 </div>
 </div>
 
@@ -873,7 +903,7 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>4 / 26</span>
+  <span>4 / 27</span>
 </div>
 </div>
 
@@ -922,7 +952,7 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>5 / 26</span>
+  <span>5 / 27</span>
 </div>
 </div>
 
@@ -1005,7 +1035,7 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>7 / 26</span>
+  <span>7 / 27</span>
 </div>
 </div>
 
@@ -1076,7 +1106,7 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>9 / 26</span>
+  <span>9 / 27</span>
 </div>
 </div>
 
@@ -1086,7 +1116,7 @@ em{font-style:italic;color:var(--ink3)}
 <div class="slide" id="s10">
 <div class="pad">
   <div class="slide-header">
-    <h2>Lược đồ RecipeKG — công thức là nút trung tâm</h2>
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Lược đồ RecipeKG — công thức là nút trung tâm</h2>
     <span class="section-tag">§3.1 · lược đồ KG</span>
   </div>
   <div style="display:flex;gap:24px;align-items:start">
@@ -1110,8 +1140,7 @@ em{font-style:italic;color:var(--ink3)}
           <rect x="372" y="296" width="90" height="34" rx="17"/>
           <rect x="186" y="352" width="108" height="34" rx="17"/>
           <rect x="18" y="296" width="90" height="34" rx="17"/>
-          <rect x="4" y="168" width="84" height="34" rx="17"/>
-          <rect x="16" y="182" width="80" height="20" rx="10"/>
+          <rect x="4" y="168" width="92" height="34" rx="17"/>
         </g>
         <!-- Labels in nodes -->
         <text x="63" y="84" text-anchor="middle" font-size="12" fill="#2d3748">Khẩu phần</text>
@@ -1121,28 +1150,28 @@ em{font-style:italic;color:var(--ink3)}
         <text x="417" y="318" text-anchor="middle" font-size="12" fill="#2d3748">Béo / Xơ</text>
         <text x="240" y="374" text-anchor="middle" font-size="12" fill="#2d3748">Protein / Carb</text>
         <text x="63" y="318" text-anchor="middle" font-size="12" fill="#2d3748">Bữa ăn</text>
-        <text x="46" y="190" text-anchor="middle" font-size="12" fill="#2d3748">Chế độ ăn</text>
+        <text x="50" y="190" text-anchor="middle" font-size="12" fill="#2d3748">Chế độ ăn</text>
         <!-- Arrows -->
         <g stroke="#b8860b" stroke-width="1.8" fill="none" marker-end="url(#arr)">
           <line x1="197" y1="180" x2="113" y2="96"/>
-          <line x1="214" y1="155" x2="244" y2="50"/>
+          <line x1="240" y1="154" x2="240" y2="50"/>
           <line x1="270" y1="168" x2="365" y2="97"/>
           <line x1="284" y1="202" x2="386" y2="186"/>
           <line x1="265" y1="238" x2="372" y2="299"/>
           <line x1="240" y1="246" x2="240" y2="350"/>
           <line x1="208" y1="237" x2="114" y2="306"/>
-          <line x1="196" y1="202" x2="90" y2="191"/>
+          <line x1="196" y1="202" x2="98" y2="189"/>
         </g>
         <!-- Relation labels -->
         <g fill="#b8860b" font-size="10" font-weight="600">
           <text x="148" y="126">hasServingCat</text>
-          <text x="208" y="88">usesIngredient</text>
+          <text x="247" y="104">usesIngredient</text>
           <text x="296" y="118">isFromRegion</text>
           <text x="305" y="185">hasCalorieLevel</text>
           <text x="295" y="272">hasFatLevel</text>
           <text x="220" y="300">hasProteinLevel</text>
           <text x="105" y="272">isForMealType</text>
-          <text x="96" y="196">hasDietType</text>
+          <text x="112" y="190">hasDietType</text>
         </g>
       </svg>
     </div>
@@ -1178,7 +1207,7 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>10 / 26</span>
+  <span>10 / 27</span>
 </div>
 </div>
 
@@ -1195,7 +1224,7 @@ em{font-style:italic;color:var(--ink3)}
     <div class="card gold" style="padding:18px">
       <h3>Test set 1</h3>
       <p style="margin-top:8px"><strong>Truy hồi theo tiêu chí</strong></p>
-      <p style="margin-top:4px">1 đến 5 tiêu chí kết hợp. Mỗi mức có khoảng 100 tổ hợp. Dùng liệt kê toàn bộ (1–2 tiêu chí) và lấy mẫu phân tầng theo quy tắc Freedman-Diaconis (3–5 tiêu chí).</p>
+      <p style="margin-top:4px">1 đến 5 tiêu chí kết hợp. Dùng liệt kê toàn bộ (1–2 tiêu chí) và lấy mẫu phân tầng theo quy tắc Freedman-Diaconis (3–5 tiêu chí).</p>
       
     </div>
     <div class="card teal" style="padding:18px">
@@ -1237,7 +1266,7 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>11 / 26</span>
+  <span>11 / 27</span>
 </div>
 </div>
 
@@ -1301,7 +1330,7 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>12 / 26</span>
+  <span>12 / 27</span>
 </div>
 </div>
 
@@ -1386,7 +1415,7 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>14 / 26</span>
+  <span>14 / 27</span>
 </div>
 </div>
 
@@ -1461,7 +1490,7 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>15 / 26</span>
+  <span>15 / 27</span>
 </div>
 </div>
 
@@ -1491,7 +1520,7 @@ em{font-style:italic;color:var(--ink3)}
         <h3>Ba thiết lập so sánh</h3>
         <div class="vstack" style="margin-top:8px">
           <div class="kv"><span class="k">RAG (RotatE)</span><span class="v">Top-5 từ mô hình KGE mạnh nhất trong thiết lập chính.</span></div>
-          <div class="kv"><span class="k">RAG (MiniLM)</span><span class="v">Top-5 từ mô hình nhúng văn bản, đóng vai trò RAG truyền thống.</span></div>
+          <div class="kv"><span class="k">RAG (MiniLM)</span><span class="v">Top-5 từ mô hình Text Embeddings, đóng vai trò RAG truyền thống.</span></div>
           <div class="kv"><span class="k">Không RAG</span><span class="v">Chỉ dùng tiêu chí, không có ví dụ truy hồi đi kèm.</span></div>
         </div>
       </div>
@@ -1501,8 +1530,8 @@ em{font-style:italic;color:var(--ink3)}
         <h3>Đánh giá bằng LLM chấm điểm</h3>
         <p style="margin-top:8px"><strong>Mô hình chấm điểm:</strong> Mistral Small 3.2 24B</p>
         <div class="vstack" style="margin-top:10px">
-          <div class="kv"><span class="k">Độ thỏa ràng buộc</span><span class="v">Công thức có thỏa tất cả tiêu chí người dùng đã yêu cầu không? (1–5)</span></div>
-          <div class="kv"><span class="k">Tính khả thi</span><span class="v">Công thức có thực tế để nấu tại nhà, nguyên liệu và bước làm hợp lý không? (1–5)</span></div>
+          <div class="kv"><span class="k">Satisfiability</span><span class="v">Công thức có thỏa tất cả tiêu chí người dùng đã yêu cầu không? (1–5)</span></div>
+          <div class="kv"><span class="k">Feasibility</span><span class="v">Công thức có thực tế để nấu tại nhà, nguyên liệu và bước làm hợp lý không? (1–5)</span></div>
         </div>
       </div>
       <div class="rbox">
@@ -1518,25 +1547,85 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>16 / 26</span>
+  <span>16 / 27</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 17 · PART TITLE — EXPERIMENTS
+     SLIDE 17 · METHOD REVIEW
 ═══════════════════════════════════════════════════════ -->
 <div class="slide" id="s17">
+<div class="pad">
+  <div class="slide-header">
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Nhận xét phương pháp RecipeRAG</h2>
+    <span class="section-tag">§4 · phân tích phương pháp</span>
+  </div>
+  <div class="method-review-grid">
+    <div class="method-review-panel">
+      <h3>Điểm mạnh</h3>
+      <div class="method-review-list">
+        <div class="method-review-item">
+          <div class="method-review-num">01</div>
+          <p><strong>Đặt truy hồi như dự đoán liên kết:</strong> thay vì chỉ dùng độ tương đồng cosine, hệ thống chấm độ hợp lý của bộ ba <em>(công thức, quan hệ, tiêu chí)</em>, phù hợp hơn với truy vấn đa tiêu chí.</p>
+        </div>
+        <div class="method-review-item">
+          <div class="method-review-num">02</div>
+          <p><strong>Chuẩn hóa MinMax theo từng tiêu chí:</strong> mỗi tiêu chí được đưa về cùng thang điểm trước khi cộng, hạn chế việc một tiêu chí áp đảo do scale lớn hơn.</p>
+        </div>
+        <div class="method-review-item">
+          <div class="method-review-num">03</div>
+          <p><strong>Schema KG bao phủ đúng nhu cầu:</strong> dinh dưỡng, vùng ẩm thực, chế độ ăn, phương pháp nấu và nguyên liệu đều là các chiều người dùng quan tâm.</p>
+        </div>
+      </div>
+    </div>
+    <div class="method-review-panel weak">
+      <h3>Điểm yếu cần phản biện</h3>
+      <div class="method-review-list">
+        <div class="method-review-item">
+          <div class="method-review-num">01</div>
+          <p><strong>Cộng điểm đơn giản, chưa có trọng số:</strong> giả định mọi tiêu chí quan trọng như nhau; tiêu chí bắt buộc như thuần chay chưa được xử lý như ràng buộc cứng.</p>
+        </div>
+        <div class="method-review-item">
+          <div class="method-review-num">02</div>
+          <p><strong>Không phát hiện ràng buộc mâu thuẫn:</strong> hệ thống chưa nêu cơ chế xử lý các tổ hợp như giàu protein + thuần chay + ít calo.</p>
+        </div>
+        <div class="method-review-item">
+          <div class="method-review-num">03</div>
+          <p><strong>Pipeline sinh là hộp đen:</strong> prompt cho DeepSeek-R1 không được công khai, nên khó tái lập và khó biết Satisfiability được bảo đảm thế nào.</p>
+        </div>
+        <div class="method-review-item">
+          <div class="method-review-num">04</div>
+          <p><strong>Không hỗ trợ thực thể ngoài đồ thị:</strong> nguyên liệu hoặc kiểu ẩm thực không có trong KG lúc huấn luyện sẽ là hạn chế lớn khi triển khai thực tế.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="method-review-bottom">
+    <div class="mini-label">Kết luận</div>
+    <p><strong>Phương pháp mạnh ở phần truy hồi có cấu trúc,</strong> nhưng vẫn cần cơ chế trọng số, ràng buộc cứng, phát hiện mâu thuẫn và công khai prompt để thuyết phục hơn về mặt khoa học.</p>
+  </div>
+</div>
+<div class="slide-footer">
+  <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
+  <span>17 / 27</span>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SLIDE 18 · PART TITLE — EXPERIMENTS
+═══════════════════════════════════════════════════════ -->
+<div class="slide" id="s18">
 <div class="part-slide">
   <div class="part-num">PHẦN 05 / 06</div>
   <h1>Thí nghiệm &amp; Kết quả</h1>
-  <p class="part-desc">Bài báo đánh giá hai nhiệm vụ: truy hồi công thức bằng Hits@k/MRR và sinh công thức bằng điểm thỏa ràng buộc, tính khả thi. Trọng tâm là xem KGE có giữ vững khi số ràng buộc tăng hay không.</p>
+  <p class="part-desc">Bài báo đánh giá hai nhiệm vụ: truy hồi công thức bằng Hits@k/MRR và sinh công thức bằng Feasibility, Satisfiability. Trọng tâm là xem KGE có hoạt động ổn định khi số ràng buộc hoặc tiêu chí tăng lên không.</p>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 18 · METRICS
+     SLIDE 19 · METRICS
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s18">
+<div class="slide" id="s19">
 <div class="pad">
   <div class="slide-header">
     <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Chỉ số đánh giá: truy hồi và sinh công thức</h2>
@@ -1561,8 +1650,8 @@ em{font-style:italic;color:var(--ink3)}
     </div>
     <div class="card flat" style="padding:18px">
       <h3>Đánh giá sinh công thức</h3>
-      <p style="margin-top:8px"><strong>Độ thỏa ràng buộc</strong> đo công thức sinh ra có đáp ứng đủ tiêu chí đầu vào hay không.</p>
-      <p style="margin-top:7px"><strong>Tính khả thi</strong> đo hướng dẫn nấu, phối hợp nguyên liệu và mức thực tế của công thức.</p>
+      <p style="margin-top:8px"><strong>Satisfiability</strong> đo công thức sinh ra có đáp ứng đủ tiêu chí đầu vào hay không.</p>
+      <p style="margin-top:7px"><strong>Feasibility</strong> đo hướng dẫn nấu, phối hợp nguyên liệu và mức thực tế của công thức.</p>
       <div class="hbox" style="margin-top:10px">
         <div class="hbox-label">LLM-as-a-judge</div>
         <p>Mistral Small 3.2 24B chấm điểm thang 1–5, không yêu cầu giải thích văn bản.</p>
@@ -1578,8 +1667,8 @@ em{font-style:italic;color:var(--ink3)}
         <div class="kv"><span class="k">QuatE</span><span class="v">Nhúng thực thể và quan hệ bằng quaternion.</span></div>
       </div>
       <div>
-        <div class="kv"><span class="k">GTE-Large</span><span class="v">Baseline nhúng văn bản đa dụng.</span></div>
-        <div class="kv"><span class="k">MiniLM</span><span class="v">Baseline sentence-transformers cho tìm kiếm ngữ nghĩa và RAG nhúng văn bản.</span></div>
+        <div class="kv"><span class="k">GTE-Large</span><span class="v">Baseline Text Embeddings đa dụng.</span></div>
+        <div class="kv"><span class="k">MiniLM</span><span class="v">Baseline sentence-transformers cho tìm kiếm ngữ nghĩa và RAG dùng Text Embeddings.</span></div>
         <div class="kv"><span class="k">No RAG</span><span class="v">Không cung cấp ngữ cảnh truy hồi cho DeepSeek-R1 ở bước sinh.</span></div>
       </div>
     </div>
@@ -1587,21 +1676,21 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>18 / 26</span>
+  <span>19 / 27</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 19 · RESULTS TABLE — TEST SET 1 (criteria)
+     SLIDE 20 · RESULTS TABLE — TEST SET 1 (criteria)
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s19">
+<div class="slide" id="s20">
 <div class="pad-sm">
   <div class="slide-header">
     <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Kết quả bộ kiểm thử 1 — truy hồi theo tiêu chí (Bảng 4)</h2>
     <span class="section-tag">§6.1 · truy hồi theo tiêu chí</span>
   </div>
   <p style="font-size:.78em;margin-bottom:10px;color:var(--ink3)">Bộ 1 kiểm tra truy hồi theo tiêu chí chung như chế độ ăn, vùng miền, dinh dưỡng. Tất cả giá trị tính theo %. <strong>In đậm xanh</strong> = tốt nhất trong cột.</p>
-  <table class="tbl" style="font-size:.72em">
+  <table class="tbl" style="font-size:.75em">
     <thead>
       <tr>
         <th rowspan="2">Model</th>
@@ -1620,13 +1709,13 @@ em{font-style:italic;color:var(--ink3)}
         <td>QuatE</td>
         <td>97.7</td><td class="best">100</td><td class="best">100</td><td>98.9</td>
         <td>97.0</td><td>98.9</td><td>98.9</td><td>97.9</td>
-        <td class="best">91.0</td><td class="best">95.0</td><td>95.9</td><td class="best">92.9</td>
+        <td class="best">91.0</td><td>95.0</td><td>95.9</td><td class="best">92.9</td>
       </tr>
       <tr class="hi-row">
         <td>RotatE</td>
         <td class="best">100</td><td class="best">100</td><td class="best">100</td><td class="best">100</td>
         <td class="best">97.6</td><td class="best">99.1</td><td class="best">99.1</td><td class="best">98.2</td>
-        <td>89.2</td><td>95.9</td><td class="best">96.9</td><td>92.3</td>
+        <td>89.2</td><td class="best">95.9</td><td class="best">96.9</td><td>92.3</td>
       </tr>
       <tr>
         <td>TransE</td>
@@ -1649,7 +1738,7 @@ em{font-style:italic;color:var(--ink3)}
     </tbody>
   </table>
   <div style="margin-top:12px">
-    <table class="tbl" style="font-size:.72em">
+    <table class="tbl" style="font-size:.75em">
       <thead>
         <tr>
           <th rowspan="2">Model</th>
@@ -1671,20 +1760,20 @@ em{font-style:italic;color:var(--ink3)}
     </table>
     <div class="hbox" style="margin-top:10px">
       <div class="hbox-label">Kết luận chính</div>
-      <p>KGE áp đảo nhúng văn bản khi số tiêu chí tăng. RotatE gần như hoàn hảo ở 1–2 tiêu chí; khi lên 4–5 tiêu chí, QuatE nhỉnh hơn về MRR, còn RotatE vẫn nhỉnh ở H@5/H@10. MiniLM giảm từ 85.2 xuống 4.5, cho thấy text embedding yếu với ràng buộc tổ hợp.</p>
+      <p>KGE áp đảo Text Embeddings khi số tiêu chí tăng. RotatE gần như hoàn hảo ở 1–2 tiêu chí; khi lên 4–5 tiêu chí, QuatE nhỉnh hơn về MRR, còn RotatE vẫn nhỉnh ở H@5/H@10. MiniLM giảm từ 85.2 xuống 4.5, cho thấy Text Embeddings yếu với ràng buộc tổ hợp.</p>
     </div>
   </div>
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>19 / 26</span>
+  <span>20 / 27</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 20 · RESULTS TABLE — TEST SET 2 (ingredient)
+     SLIDE 21 · RESULTS TABLE — TEST SET 2 (ingredient)
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s20">
+<div class="slide" id="s21">
 <div class="pad">
   <div class="slide-header">
     <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Kết quả bộ kiểm thử 2 — truy hồi theo nguyên liệu (Bảng 5)</h2>
@@ -1747,22 +1836,22 @@ em{font-style:italic;color:var(--ink3)}
   </table>
   <div class="hbox" style="margin-top:14px">
     <div class="hbox-label">Kết luận chính — truy hồi theo nguyên liệu</div>
-    <p>RotatE là mô hình ổn định nhất cho nguyên liệu: MRR giảm từ 99.6 xuống 81.6 khi tăng từ 1 lên 4 nguyên liệu, vẫn bỏ xa text embedding. Đây là lý do hợp lý để chọn RotatE làm mô-đun truy hồi Top-5 cho bước sinh công thức.</p>
+    <p>RotatE là mô hình ổn định nhất cho nguyên liệu: MRR giảm từ 99.6 xuống 81.6 khi tăng từ 1 lên 4 nguyên liệu, vẫn bỏ xa Text Embeddings. Đây là lý do hợp lý để chọn RotatE làm mô-đun truy hồi Top-5 cho bước sinh công thức.</p>
   </div>
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>20 / 26</span>
+  <span>21 / 27</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 21 · MRR TREND CHART
+     SLIDE 22 · MRR TREND CHART
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s21">
+<div class="slide" id="s22">
 <div class="pad">
   <div class="slide-header">
-    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Khi số tiêu chí tăng, KGE giữ độ bền tốt hơn Text embeding</h2>
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Test Set 2: RotatE bền vững nhất khi số nguyên liệu tăng</h2>
     <span class="section-tag">§6.1 · phân tích</span>
   </div>
   <div class="trend-grid">
@@ -1777,82 +1866,86 @@ em{font-style:italic;color:var(--ink3)}
           <line x1="60" y1="96" x2="540" y2="96"/>
           <line x1="60" y1="28" x2="540" y2="28"/>
         </g>
-        <g fill="#4a5568" font-size="12" text-anchor="end">
+        <g fill="#4a5568" font-size="14" text-anchor="end">
           <text x="50" y="304">0</text>
           <text x="50" y="236">25</text>
           <text x="50" y="168">50</text>
           <text x="50" y="100">75</text>
           <text x="50" y="32">100</text>
         </g>
-        <g fill="#4a5568" font-size="12" text-anchor="middle">
+        <g fill="#4a5568" font-size="14" text-anchor="middle">
           <text x="110" y="324">1</text>
-          <text x="215" y="324">2</text>
-          <text x="320" y="324">3</text>
-          <text x="425" y="324">4</text>
-          <text x="530" y="324">5</text>
-          <text x="295" y="345">Số tiêu chí trong truy vấn</text>
+          <text x="250" y="324">2</text>
+          <text x="390" y="324">3</text>
+          <text x="530" y="324">4</text>
+          <text x="295" y="345">Số nguyên liệu trong truy vấn</text>
         </g>
-        <text transform="translate(18,164)rotate(-90)" text-anchor="middle" fill="#4a5568" font-size="12">MRR (%)</text>
+        <text transform="translate(18,164)rotate(-90)" text-anchor="middle" fill="#4a5568" font-size="14">MRR (%)</text>
 
-        <polyline points="110,28 215,33 320,49 425,84 530,126" fill="none" stroke="#0d7377" stroke-width="4" stroke-linejoin="round"/>
-        <polyline points="110,31 215,34 320,47 425,79 530,118" fill="none" stroke="#b8860b" stroke-width="4" stroke-linejoin="round" stroke-dasharray="8,4"/>
-        <polyline points="110,51 215,62 320,99 425,141 530,175" fill="none" stroke="#4a5568" stroke-width="3" stroke-linejoin="round"/>
-        <polyline points="110,74 215,115 320,182 425,232 530,257" fill="none" stroke="#c0392b" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="7,4"/>
-        <polyline points="110,68 215,170 320,239 425,300 530,288" fill="none" stroke="#c0392b" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="2,5"/>
+        <polyline points="110,29 250,41 390,64 530,78" fill="none" stroke="#0d7377" stroke-width="5" stroke-linejoin="round"/>
+        <polyline points="110,45 250,102 390,130 530,132" fill="none" stroke="#b8860b" stroke-width="4" stroke-linejoin="round" stroke-dasharray="9,5"/>
+        <polyline points="110,226 250,253 390,259 530,255" fill="none" stroke="#4a5568" stroke-width="3.5" stroke-linejoin="round"/>
+        <polyline points="110,151 250,243 390,263 530,270" fill="none" stroke="#c0392b" stroke-width="3.2" stroke-linejoin="round" stroke-dasharray="8,4"/>
+        <polyline points="110,196 250,276 390,291 530,295" fill="none" stroke="#7b2cbf" stroke-width="3.2" stroke-linejoin="round" stroke-dasharray="2,5"/>
 
-        <g fill="#0d7377"><circle cx="110" cy="28" r="5"/><circle cx="215" cy="33" r="5"/><circle cx="320" cy="49" r="5"/><circle cx="425" cy="84" r="5"/><circle cx="530" cy="126" r="5"/></g>
-        <g fill="#b8860b"><circle cx="110" cy="31" r="5"/><circle cx="215" cy="34" r="5"/><circle cx="320" cy="47" r="5"/><circle cx="425" cy="79" r="5"/><circle cx="530" cy="118" r="5"/></g>
-        <g fill="#4a5568"><circle cx="110" cy="51" r="4"/><circle cx="530" cy="175" r="4"/></g>
-        <g fill="#c0392b"><circle cx="110" cy="74" r="4"/><circle cx="530" cy="257" r="4"/><circle cx="110" cy="68" r="4"/><circle cx="425" cy="300" r="4"/></g>
+        <g fill="#0d7377"><circle cx="110" cy="29" r="6"/><circle cx="250" cy="41" r="6"/><circle cx="390" cy="64" r="6"/><circle cx="530" cy="78" r="6"/></g>
+        <g fill="#b8860b"><rect x="104" y="39" width="12" height="12" rx="2"/><rect x="244" y="96" width="12" height="12" rx="2"/><rect x="384" y="124" width="12" height="12" rx="2"/><rect x="524" y="126" width="12" height="12" rx="2"/></g>
+        <g fill="#4a5568"><circle cx="110" cy="226" r="5"/><circle cx="250" cy="253" r="5"/><circle cx="390" cy="259" r="5"/><circle cx="530" cy="255" r="5"/></g>
+        <g fill="#c0392b"><path d="M110 144 l7 14 h-14 z"/><path d="M250 236 l7 14 h-14 z"/><path d="M390 256 l7 14 h-14 z"/><path d="M530 263 l7 14 h-14 z"/></g>
+        <g fill="#7b2cbf"><path d="M104 196 h12 m-6 -6 v12" stroke="#7b2cbf" stroke-width="3"/><path d="M244 276 h12 m-6 -6 v12" stroke="#7b2cbf" stroke-width="3"/><path d="M384 291 h12 m-6 -6 v12" stroke="#7b2cbf" stroke-width="3"/><path d="M524 295 h12 m-6 -6 v12" stroke="#7b2cbf" stroke-width="3"/></g>
 
-        <g font-size="12" font-weight="700">
-          <text x="535" y="115" fill="#b8860b">66.8</text>
-          <text x="535" y="134" fill="#0d7377">64.1</text>
-          <text x="535" y="179" fill="#4a5568">45.8</text>
-          <text x="535" y="261" fill="#c0392b">15.8</text>
-          <text x="535" y="292" fill="#c0392b">4.5</text>
+        <g font-size="14" font-weight="800">
+          <text x="535" y="82" fill="#0d7377">81.6</text>
+          <text x="535" y="136" fill="#b8860b">61.7</text>
+          <text x="535" y="259" fill="#4a5568">16.7</text>
+          <text x="535" y="274" fill="#c0392b">11.1</text>
+          <text x="535" y="300" fill="#7b2cbf">1.7</text>
         </g>
       </svg>
       <div class="trend-caption">
-        <p>Bảng 4 · Retrieval Test Set 1, tiêu chí chung.</p>
+        <p>Bảng 5 · Retrieval Test Set 2, truy hồi theo nguyên liệu.</p>
         <div class="trend-legend">
           <span class="legend-item"><i class="legend-line"></i>RotatE</span>
           <span class="legend-item"><i class="legend-line gold"></i>QuatE</span>
           <span class="legend-item"><i class="legend-line gray"></i>TransE</span>
-          <span class="legend-item"><i class="legend-line red"></i>Text embeddings</span>
+          <span class="legend-item"><i class="legend-line red"></i>GTE-Large</span>
+          <span class="legend-item"><i class="legend-line" style="border-color:#7b2cbf;border-top-style:dotted"></i>MiniLM</span>
         </div>
       </div>
     </div>
     <div class="trend-reading">
       <div class="trend-point">
-        <h3>01 · KGE giảm có kiểm soát</h3>
-        <p>RotatE và QuatE bắt đầu gần 100 MRR ở 1 tiêu chí, và vẫn giữ khoảng 64–67 MRR ở 5 tiêu chí.</p>
+        <h3>01 · Test Set 2 khó hơn</h3>
+        <p>Truy vấn nguyên liệu đòi hỏi tìm giao giữa nhiều tập công thức trong phân phối đuôi dài, nên phù hợp để kiểm tra độ bền của mô hình.</p>
       </div>
       <div class="trend-point">
-        <h3>02 · Text embedding mất lợi thế khi ràng buộc tổ hợp</h3>
-        <p>GTE-Large giảm còn 15.8 MRR; MiniLM còn 4.5 MRR ở 5 tiêu chí. Khoảng cách với KGE mở rộng khi truy vấn phức tạp hơn.</p>
+        <h3>02 · RotatE nổi bật nhất</h3>
+        <p>RotatE giữ MRR từ 99.6 xuống 81.6 khi tăng từ 1 lên 4 nguyên liệu; QuatE giảm xuống 61.7 và các baseline thấp hơn nhiều.</p>
       </div>
-      
+      <div class="trend-point">
+        <h3>03 · Text Embeddings tụt rất nhanh</h3>
+        <p>GTE-Large còn 11.1 MRR và MiniLM còn 1.7 MRR ở 4 nguyên liệu, cho thấy truy hồi theo nhãn nguyên liệu không phù hợp với so khớp ngữ nghĩa thuần.</p>
+      </div>
     </div>
   </div>
   <div class="trend-takeaway">
     <div class="mini-label">Kết luận</div>
-    <p><strong>Khi truy vấn chuyển từ một nhãn đơn sang tổ hợp nhiều quan hệ,</strong> lợi thế của RecipeRAG không nằm ở semantic similarity mà nằm ở cách KGE chấm từng quan hệ có cấu trúc.</p>
+    <p><strong>Với bài toán nguyên liệu khó hơn, RotatE là bằng chứng mạnh nhất cho RecipeRAG:</strong> mô hình giữ thứ hạng ổn định khi số ràng buộc tăng, trong khi Text Embeddings suy giảm rất nhanh.</p>
   </div>
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>21 / 26</span>
+  <span>22 / 27</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 22 · GENERATION RESULTS
+     SLIDE 23 · GENERATION RESULTS
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s22">
+<div class="slide" id="s23">
 <div class="pad">
   <div class="slide-header">
-    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Kết quả sinh công thức — độ thỏa ràng buộc và tính khả thi (Bảng 6)</h2>
+    <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Kết quả sinh công thức — Feasibility và Satisfiability (Bảng 6)</h2>
     <span class="section-tag">§6.2 · kết quả sinh công thức</span>
   </div>
   <p style="font-size:.78em;margin-bottom:10px;color:var(--ink3)">So sánh ba cấu hình: RAG dùng RotatE, RAG dùng MiniLM, và Không RAG. DeepSeek-R1 sinh công thức; Mistral Small 3.2 24B chấm điểm thang 1–5.</p>
@@ -1860,7 +1953,7 @@ em{font-style:italic;color:var(--ink3)}
     <div class="vstack">
       <table class="tbl" style="font-size:.85em">
         <thead>
-          <tr><th>Thiết lập</th><th>Tính khả thi<br>Mean ± SD</th><th>Độ thỏa ràng buộc<br>Mean ± SD</th></tr>
+          <tr><th>Thiết lập</th><th>Feasibility<br>Mean ± SD</th><th>Satisfiability<br>Mean ± SD</th></tr>
         </thead>
         <tbody>
           <tr class="hi-row">
@@ -1881,7 +1974,7 @@ em{font-style:italic;color:var(--ink3)}
         </tbody>
       </table>
       <div style="margin-top:8px">
-        <h3 style="margin-bottom:8px">Độ thỏa ràng buộc — trung bình</h3>
+        <h3 style="margin-bottom:8px">Satisfiability — trung bình</h3>
         <div class="bar-row">
           <span class="bar-label">RotatE RAG</span>
           <div class="bar-track"><div class="bar-fill" style="width:90.2%;background:var(--teal)"></div></div>
@@ -1897,7 +1990,7 @@ em{font-style:italic;color:var(--ink3)}
           <div class="bar-track"><div class="bar-fill" style="width:84.4%;background:var(--ink3)"></div></div>
           <span class="bar-val">4.22</span>
         </div>
-        <h3 style="margin-bottom:8px;margin-top:14px">Tính khả thi — trung bình</h3>
+        <h3 style="margin-bottom:8px;margin-top:14px">Feasibility — trung bình</h3>
         <div class="bar-row">
           <span class="bar-label">RotatE RAG</span>
           <div class="bar-track"><div class="bar-fill" style="width:80.2%;background:var(--teal)"></div></div>
@@ -1918,11 +2011,11 @@ em{font-style:italic;color:var(--ink3)}
     <div class="vstack">
       <div class="hbox">
         <div class="hbox-label">Kết quả chính</div>
-        <p>RAG (RotatE) đạt <strong>độ thỏa ràng buộc cao nhất (4.51)</strong> và <strong>độ lệch chuẩn thấp nhất</strong> trên cả hai chỉ số. Giá trị chính của RecipeRAG nằm ở việc giữ đầu ra bám ràng buộc và ổn định hơn.</p>
+        <p>RAG (RotatE) đạt <strong>Satisfiability cao nhất (4.51)</strong> và <strong>độ lệch chuẩn thấp nhất</strong> trên cả hai chỉ số. Giá trị chính của RecipeRAG nằm ở việc giữ đầu ra bám ràng buộc và ổn định hơn.</p>
       </div>
       <div class="rbox">
         <div class="rbox-label">Nhận xét</div>
-        <p>Không RAG có điểm khả thi trung bình (4.04) cao hơn RotatE RAG (4.01), nhưng độ lệch chuẩn lớn hơn nhiều: 1.07 so với 0.52. Ý nghĩa: Không RAG đôi khi sinh công thức rất thực tế, nhưng kém ổn định hơn.</p>
+        <p>Không RAG có Feasibility trung bình (4.04) cao hơn RotatE RAG (4.01), nhưng độ lệch chuẩn lớn hơn nhiều: 1.07 so với 0.52. Ý nghĩa: Không RAG đôi khi sinh công thức rất thực tế, nhưng kém ổn định hơn.</p>
       </div>
       <div class="card flat">
         <h3>ý nghĩa thực tiễn</h3>
@@ -1933,7 +2026,7 @@ em{font-style:italic;color:var(--ink3)}
         <ul style="margin-top:6px;padding-left:16px;font-size:.82em" class="vstack">
           <li>Không có điểm đồng thuận giữa nhiều người chấm.</li>
           <li>Mistral Small 3.2 24B có thể thiên lệch với đầu ra từ DeepSeek-R1.</li>
-          <li>Không kiểm tra an toàn dinh dưỡng hoặc tính khả thi thực sự.</li>
+          <li>Không kiểm tra an toàn dinh dưỡng hoặc Feasibility thực sự.</li>
         </ul>
       </div>
     </div>
@@ -1941,14 +2034,14 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>22 / 26</span>
+  <span>23 / 27</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 23 · EXPERIMENT LIMITATIONS
+     SLIDE 24 · EXPERIMENT LIMITATIONS
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s23">
+<div class="slide" id="s24">
 <div class="pad">
   <div class="slide-header">
     <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Hạn chế của phần thí nghiệm và kết quả</h2>
@@ -1959,7 +2052,7 @@ em{font-style:italic;color:var(--ink3)}
       <h3>Đánh giá sinh công thức</h3>
       <div class="exp-limit-note">
         <span>Human evaluation</span>
-        <p>Không có đầu bếp, chuyên gia dinh dưỡng hoặc người dùng thật đánh giá. LLM chấm tính khả thi trên văn bản chưa đủ để kết luận món ăn thực sự nấu được và an toàn.</p>
+        <p>Không có đầu bếp, chuyên gia dinh dưỡng hoặc người dùng thật đánh giá. LLM chấm Feasibility trên văn bản chưa đủ để kết luận món ăn thực sự nấu được và an toàn.</p>
       </div>
       <div class="exp-limit-note">
         <span>Case study</span>
@@ -1996,14 +2089,14 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>23 / 26</span>
+  <span>24 / 27</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 24 · PART TITLE — ANALYSIS
+     SLIDE 25 · PART TITLE — ANALYSIS
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s24">
+<div class="slide" id="s25">
 <div class="part-slide">
   <div class="part-num">PHẦN 06 / 06</div>
   <h1>Tổng quát</h1>
@@ -2012,9 +2105,9 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 25 · FINAL SUMMARY
+     SLIDE 26 · FINAL SUMMARY
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s25">
+<div class="slide" id="s26">
 <div class="pad">
   <div class="slide-header">
     <h2 style="font-family:var(--sans);font-size:1.42em;font-weight:700">Kết luận và đóng góp chính</h2>
@@ -2027,11 +2120,11 @@ em{font-style:italic;color:var(--ink3)}
       <div class="final-proof">
         <div>
           <span>4.51</span>
-          <p>độ thỏa ràng buộc cao nhất với RAG RotatE</p>
+          <p>Satisfiability cao nhất với RAG RotatE</p>
         </div>
         <div>
           <span>0.50</span>
-          <p>SD thấp nhất cho độ thỏa ràng buộc</p>
+          <p>SD thấp nhất cho Satisfiability</p>
         </div>
       </div>
     </div>
@@ -2047,7 +2140,7 @@ em{font-style:italic;color:var(--ink3)}
         </div>
         <div class="final-pillar">
           <h3>03 · Minh chứng thực nghiệm</h3>
-          <p>RotatE và QuatE vượt nhúng văn bản rõ rệt khi số tiêu chí tăng; RotatE được chọn làm nền cho bước sinh.</p>
+          <p>RotatE và QuatE vượt Text Embeddings rõ rệt khi số tiêu chí tăng; RotatE được chọn làm nền cho bước sinh.</p>
         </div>
         <div class="final-pillar">
           <h3>04 · Giá trị thực tiễn</h3>
@@ -2062,14 +2155,14 @@ em{font-style:italic;color:var(--ink3)}
 </div>
 <div class="slide-footer">
   <span>RecipeRAG · Loesch, Durmuş, Celebi · RAGE-KG @ ISWC 2025</span>
-  <span>25 / 26</span>
+  <span>26 / 27</span>
 </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SLIDE 26 · CLOSING
+     SLIDE 27 · CLOSING
 ═══════════════════════════════════════════════════════ -->
-<div class="slide" id="s26">
+<div class="slide" id="s27">
 <div class="cover" style="justify-content:center;text-align:center;padding:56px">
   <div class="conference-tag" style="justify-content:center">
     <span class="conf-badge">RAGE-KG 2025</span>
