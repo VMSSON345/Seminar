@@ -210,14 +210,14 @@ em{font-style:italic;color:var(--ink3)}
 
 /* ── MOTIVATION REWRITE ── */
 .motivation-grid{
-  display:grid;grid-template-columns:420px 1fr;gap:26px;align-items:stretch
+  display:grid;grid-template-columns:420px 1fr;gap:26px;align-items:start
 }
 .motivation-query{
   background:#fff;border:1.5px solid var(--rule);border-radius:6px;
   border-top:4px solid var(--gold);padding:20px 22px 18px;display:flex;flex-direction:column
 }
 .motivation-question{
-  font-family:var(--sans);font-size:1.13em;font-weight:800;line-height:1.28;color:var(--ink);
+  font-family:var(--sans);font-size:1.12em;font-weight:600;line-height:1.3;color:var(--ink);
   margin:4px 0 12px
 }
 .motivation-query p{font-size:.8em;line-height:1.45;color:var(--ink3)}
@@ -259,6 +259,11 @@ em{font-style:italic;color:var(--ink3)}
 .motivation-takeaway .mini-label{color:var(--gold-ll);margin:0}
 .motivation-takeaway p{font-size:.82em;color:rgba(232,237,245,.9);line-height:1.43}
 .motivation-takeaway strong{color:#fff}
+#s4 .slide-header h2,
+#s5 .slide-header h2{font-family:var(--sans)!important;font-weight:700!important;letter-spacing:0!important}
+#s4 .why-item h3,
+#s4 .gap-panel h3{font-family:var(--sans);letter-spacing:0;text-transform:none}
+#s4 .gap-row span{font-family:var(--sans);font-size:.68em;font-weight:700;letter-spacing:0;text-transform:none}
 
 /* ── CONTRIBUTIONS ── */
 .contrib-grid{
@@ -295,6 +300,34 @@ em{font-style:italic;color:var(--ink3)}
 .contrib-takeaway .mini-label{color:var(--gold-ll);margin:0}
 .contrib-takeaway p{font-size:.82em;color:rgba(232,237,245,.88)}
 .contrib-takeaway strong{color:#fff}
+#s5 .contrib-type{
+  font-family:var(--sans);font-size:.68em;font-weight:700;
+  letter-spacing:0;text-transform:none;color:var(--gold)
+}
+#s5 .contrib-title{font-weight:700;letter-spacing:0}
+#s5 .contrib-meta span{font-family:var(--sans);font-size:.68em;font-weight:700;letter-spacing:0;text-transform:none}
+
+/* ── GENERATION MODULE ── */
+.generation-layout{
+  display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;margin-top:8px
+}
+.generation-layout .vstack{gap:18px}
+.generation-layout .card,
+.generation-layout .rbox{
+  padding:24px 26px
+}
+.generation-layout h3{font-size:1.05em;margin-bottom:10px}
+.generation-layout p{font-size:.94em;line-height:1.55}
+.generation-layout .num-list li{
+  grid-template-columns:34px 1fr;gap:12px;padding:12px 0
+}
+.generation-layout .num-list li::before{
+  font-size:.86em;padding:3px 0;margin-top:1px
+}
+.generation-limit{
+  min-height:248px;display:flex;flex-direction:column;justify-content:center
+}
+.generation-limit .rbox-label{font-size:.74em;margin-bottom:12px}
 
 /* ── RELATED WORK MAP ── */
 .related-grid{
@@ -308,12 +341,12 @@ em{font-style:italic;color:var(--ink3)}
 .related-card:nth-child(2){border-top:4px solid var(--teal)}
 .related-card:nth-child(3){border-top:4px solid var(--red)}
 .related-type{
-  font-family:var(--mono);font-size:.64em;font-weight:700;
-  letter-spacing:.11em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px
+  font-family:var(--sans);font-size:.72em;font-weight:600;
+  letter-spacing:0;text-transform:none;color:var(--gold);margin-bottom:10px
 }
 .related-title{
-  font-family:var(--sans);font-size:1.02em;font-weight:800;
-  line-height:1.22;color:var(--ink);margin-bottom:11px
+  font-family:var(--sans);font-size:1.02em;font-weight:600;
+  line-height:1.26;color:var(--ink);margin-bottom:11px
 }
 .related-row{border-top:1px solid var(--rule);padding-top:9px;margin-top:9px}
 .related-row:first-of-type{border-top:none;padding-top:0;margin-top:0}
@@ -669,6 +702,43 @@ em{font-style:italic;color:var(--ink3)}
   display:flex;align-items:center;justify-content:center;
   color:var(--gold);font-size:1.3em;font-weight:700;flex:0 0 20px
 }
+.pipeline-image-stage{
+  height:520px;display:flex;align-items:center;justify-content:center
+}
+.pipeline-image-stage img{
+  max-height:100%;max-width:100%;object-fit:contain;
+  background:#fff;border:1px solid var(--rule);border-radius:4px;
+  box-shadow:0 10px 28px rgba(20,31,48,.08)
+}
+.pipeline-combo{
+  display:grid;grid-template-columns:1fr 470px;gap:24px;align-items:start
+}
+.pipeline-steps{
+  display:flex;flex-direction:column;gap:7px
+}
+.pipeline-step{
+  display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;
+  background:#fff;border:1px solid var(--rule);border-radius:6px;
+  padding:7px 11px
+}
+.pipeline-step .num{
+  width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:var(--navy);color:#fff;font-family:var(--mono);font-size:.7em;font-weight:700
+}
+.pipeline-step h3{font-size:.8em;margin-bottom:2px;color:var(--ink)}
+.pipeline-step p{font-size:.7em;line-height:1.26;color:var(--ink3)}
+.pipeline-step-arrow{
+  font-family:var(--mono);font-size:.72em;font-weight:700;color:var(--gold);
+  line-height:1;text-align:center;margin:-2px 0
+}
+.pipeline-image-compact{
+  height:485px;display:flex;align-items:center;justify-content:center
+}
+.pipeline-image-compact img{
+  max-height:100%;max-width:100%;object-fit:contain;
+  background:#fff;border:1px solid var(--rule);border-radius:4px;
+  box-shadow:0 10px 28px rgba(20,31,48,.08)
+}
 
 /* ── RESULT VIS ── */
 .bar-row{display:flex;align-items:center;gap:10px;margin:5px 0}
@@ -832,7 +902,7 @@ em{font-style:italic;color:var(--ink3)}
 <div class="part-slide">
   <div class="part-num">PHẦN 01 / 06</div>
   <h1>Động lực nghiên cứu</h1>
-  <p class="part-desc">Câu hỏi mở đầu: làm sao sinh một công thức vừa đúng sở thích, vừa đúng ràng buộc dinh dưỡng, nguyên liệu và ngữ cảnh nấu ăn?</p>
+  <p class="part-desc">Làm sao sinh một công thức vừa đúng sở thích, vừa đúng ràng buộc dinh dưỡng, nguyên liệu và ngữ cảnh nấu ăn?</p>
 </div>
 </div>
 
@@ -851,14 +921,7 @@ em{font-style:italic;color:var(--ink3)}
       <div class="motivation-question">Người dùng không chỉ hỏi “món gì ngon?”, mà hỏi “món nào thỏa đồng thời nhiều điều kiện?”</div>
       <p>Một truy vấn công thức thường là tập ràng buộc có cấu trúc, không chỉ là một câu văn để so khớp ngữ nghĩa.</p>
       <div class="user-request">
-        <p><strong>Ví dụ:</strong> cần bữa tối chay, ít carb, giàu protein, nấu dưới 30 phút, dùng nguyên liệu đang có trong bếp và hợp khẩu vị gia đình.</p>
-      </div>
-      <div class="constraint-list">
-        <div class="criteria-line"><span>Sức khỏe</span><strong>ít carb · giàu protein · ít béo</strong></div>
-        <div class="criteria-line"><span>Ăn kiêng</span><strong>chay · thuần chay · không lactose</strong></div>
-        <div class="criteria-line"><span>Ngữ cảnh</span><strong>bữa tối · &lt; 30 phút · 1-4 khẩu phần</strong></div>
-        <div class="criteria-line"><span>Khả dụng</span><strong>chỉ dùng nguyên liệu đang có</strong></div>
-        <div class="criteria-line"><span>Văn hóa</span><strong>vùng miền · phong cách món ăn · khẩu vị</strong></div>
+        <p><strong>Ví dụ:</strong> cần bữa tối chay, ít carb, giàu protein, nấu dưới 30 phút.</p>
       </div>
       <div class="constraint-brace">
         Càng thêm tiêu chí, số công thức thỏa tất cả ràng buộc càng ít và quan hệ giữa các tiêu chí càng khó kiểm soát.
@@ -1356,62 +1419,66 @@ em{font-style:italic;color:var(--ink3)}
     <h2>Quy trình RecipeRAG — tổng quan</h2>
     <span class="section-tag">§4 · phương pháp</span>
   </div>
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:18px">
-    <div class="flow-step" style="flex:1">
-      <div class="fs-num">1</div>
-      <h3>Huấn luyện nhúng KG</h3>
-      <p>Huấn luyện TransE, RotatE, QuatE trên RecipeKG bằng PyKEEN.</p>
-    </div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-step" style="flex:1">
-      <div class="fs-num">2</div>
-      <h3>Tạo bộ ba truy vấn</h3>
-      <p>Mỗi tiêu chí người dùng → bộ ba <code>(r, c<sup>r</sup>, c<sup>e</sup>)</code>.</p>
-    </div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-step" style="flex:1">
-      <div class="fs-num">3</div>
-      <h3>Chấm điểm hợp lý</h3>
-      <p>Hàm chấm điểm KGE <code>f(r, c<sup>r</sup>, c<sup>e</sup>)</code> cho từng công thức × tiêu chí.</p>
-    </div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-step" style="flex:1">
-      <div class="fs-num">4</div>
-      <h3>Chuẩn hóa và cộng gộp</h3>
-      <p>MinMax → cộng điểm S<sub>i</sub> qua tất cả m tiêu chí.</p>
-    </div>
-    <div class="flow-arrow">→</div>
-    <div class="flow-step" style="flex:1">
-      <div class="fs-num">5</div>
-      <h3>Sinh công thức</h3>
-      <p>DeepSeek-R1-0528 sinh công thức từ top-5 và tiêu chí người dùng.</p>
-    </div>
-  </div>
-  <div class="col2" style="align-items:start">
-    <div class="vstack">
-      <div class="eq-box">
-        <div style="font-size:.82em;color:var(--ink3);font-family:var(--sans);text-align:left;margin-bottom:8px">Hàm tổng hợp điểm:</div>
-        <div style="font-family:var(--serif);font-size:1.25em">S<sub style="font-size:.65em">i</sub> = ∑<sub style="font-size:.65em">j=1</sub><sup style="font-size:.65em">m</sup> f̂(r<sub style="font-size:.65em">i</sub>, c<sup style="font-size:.65em">r</sup><sub style="font-size:.65em">j</sub>, c<sup style="font-size:.65em">e</sup><sub style="font-size:.65em">j</sub>)</div>
-        <div class="desc">f̂ = điểm KGE đã chuẩn hóa MinMax; m = số tiêu chí người dùng</div>
-      </div>
-      <div class="card flat">
-        <h3>Tại sao cộng tổng thay vì max hoặc min?</h3>
-        <p style="margin-top:6px">Cộng tổng cho phép công thức tốt <em>trên nhiều chiều vừa phải</em> vượt qua công thức chỉ xuất sắc trên một chiều. MinMax đảm bảo không tiêu chí nào áp đảo do thang điểm khác.</p>
-      </div>
-    </div>
-    <div class="vstack">
-      <div class="card gold">
-        <h3>Ba mô hình KGE được so sánh</h3>
-        <div class="vstack" style="margin-top:8px">
-          <div class="kv"><span class="k">TransE</span><span class="v">Khoảng cách tịnh tiến — quan hệ là phép dịch trong không gian nhúng.</span></div>
-          <div class="kv"><span class="k">RotatE</span><span class="v">Mô hình phép quay — quan hệ là phép quay trong không gian số phức.</span></div>
-          <div class="kv"><span class="k">QuatE</span><span class="v">Quaternion — mã hóa thực thể và quan hệ bằng quaternion 4D.</span></div>
+  <div class="pipeline-combo">
+    <div class="pipeline-steps">
+      <div class="pipeline-step">
+        <div class="num">1</div>
+        <div>
+          <h3>Huấn luyện nhúng KG</h3>
+          <p>Huấn luyện TransE, RotatE, QuatE trên RecipeKG bằng PyKEEN.</p>
         </div>
       </div>
-      <div class="card flat">
-        <h3>Điểm cần nhấn khi trình bày</h3>
-        <p style="margin-top:6px">Bài báo chọn top-5 công thức sau truy hồi làm ngữ cảnh cho mô hình sinh. Đây là điểm nối trực tiếp giữa phần truy hồi bằng đồ thị tri thức và phần sinh công thức bằng LLM.</p>
+      <div class="pipeline-step-arrow">↓</div>
+      <div class="pipeline-step">
+        <div class="num">2</div>
+        <div>
+          <h3>Tạo bộ ba truy vấn</h3>
+          <p>Mỗi tiêu chí người dùng → bộ ba <code>(r, c<sup>r</sup>, c<sup>e</sup>)</code>.</p>
+        </div>
       </div>
+      <div class="pipeline-step-arrow">↓</div>
+      <div class="pipeline-step">
+        <div class="num">3</div>
+        <div>
+          <h3>Chấm điểm hợp lý</h3>
+          <p>Hàm chấm điểm KGE <code>f(r, c<sup>r</sup>, c<sup>e</sup>)</code> cho từng công thức × tiêu chí.</p>
+        </div>
+      </div>
+      <div class="pipeline-step-arrow">↓</div>
+      <div class="pipeline-step">
+        <div class="num">4</div>
+        <div>
+          <h3>Chuẩn hóa điểm</h3>
+          <p>MinMax đưa điểm từng tiêu chí về cùng thang đo trước khi tổng hợp.</p>
+        </div>
+      </div>
+      <div class="pipeline-step-arrow">↓</div>
+      <div class="pipeline-step">
+        <div class="num">5</div>
+        <div>
+          <h3>Aggregation</h3>
+          <p>Tính <code>S<sub>i</sub></code> bằng cách cộng điểm qua tất cả <code>m</code> tiêu chí.</p>
+        </div>
+      </div>
+      <div class="pipeline-step-arrow">↓</div>
+      <div class="pipeline-step">
+        <div class="num">6</div>
+        <div>
+          <h3>Top-N Recipe Selection</h3>
+          <p>Chọn các công thức có điểm tổng hợp cao nhất làm ngữ cảnh truy hồi.</p>
+        </div>
+      </div>
+      <div class="pipeline-step-arrow">↓</div>
+      <div class="pipeline-step">
+        <div class="num">7</div>
+        <div>
+          <h3>Sinh công thức</h3>
+          <p>DeepSeek-R1-0528 sinh công thức từ top-5 và tiêu chí người dùng.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pipeline-image-compact">
+      <img src="anh.jpg" alt="RecipeRAG pipeline overview">
     </div>
   </div>
 </div>
@@ -1430,11 +1497,11 @@ em{font-style:italic;color:var(--ink3)}
     <h2>Ví dụ minh họa</h2>
     <span class="section-tag">§4 · tạo bộ ba</span>
   </div>
-  <div class="col2" style="align-items:start">
+  <div class="generation-layout">
     <div class="vstack">
       <div class="card gold">
         <h3>Ví dụ truy vấn người dùng</h3>
-        <p style="margin-top:8px;font-family:var(--serif);font-size:1em;font-style:italic">"Tôi muốn một bữa dinner phong cách East Asia, ăn chay, giàu protein và nấu bằng air fryer."</p>
+        <p style="margin-top:8px;font-family:var(--serif);font-size:1em;font-style:italic">"I want an Asian-style, vegetarian, high-protein dinner cooked in an air fryer."</p>
       </div>
       <div class="card flat">
         <h3>Bộ ba truy vấn được tạo</h3>
@@ -1518,31 +1585,11 @@ em{font-style:italic;color:var(--ink3)}
         <h3>Mô hình được chọn</h3>
         <p style="margin-top:8px"><strong>DeepSeek-R1-0528</strong> — reasoning model, tốt hơn cho bài toán yêu cầu logic nấu ăn và tổng hợp nhiều ràng buộc.</p>
       </div>
-      <div class="card flat">
-        <h3>Ba thiết lập so sánh</h3>
-        <div class="vstack" style="margin-top:8px">
-          <div class="kv"><span class="k">RAG (RotatE)</span><span class="v">Top-5 từ mô hình KGE mạnh nhất trong thiết lập chính.</span></div>
-          <div class="kv"><span class="k">RAG (MiniLM)</span><span class="v">Top-5 từ mô hình Text Embeddings, đóng vai trò RAG truyền thống.</span></div>
-          <div class="kv"><span class="k">Không RAG</span><span class="v">Chỉ dùng tiêu chí, không có ví dụ truy hồi đi kèm.</span></div>
-        </div>
-      </div>
     </div>
     <div class="vstack">
-      <div class="card teal">
-        <h3>Đánh giá bằng LLM chấm điểm</h3>
-        <p style="margin-top:8px"><strong>Mô hình chấm điểm:</strong> Mistral Small 3.2 24B</p>
-        <div class="vstack" style="margin-top:10px">
-          <div class="kv"><span class="k">Satisfiability</span><span class="v">Công thức có thỏa tất cả tiêu chí người dùng đã yêu cầu không? (1–5)</span></div>
-          <div class="kv"><span class="k">Feasibility</span><span class="v">Công thức có thực tế để nấu tại nhà, nguyên liệu và bước làm hợp lý không? (1–5)</span></div>
-        </div>
-      </div>
-      <div class="rbox">
+      <div class="rbox generation-limit">
         <div class="rbox-label">Giới hạn của mô-đun sinh</div>
         <p>Bài báo nêu dùng top-5 công thức làm ngữ cảnh cho DeepSeek-R1, nhưng chưa mô tả chi tiết prompt, cách xử lý khi ít kết quả phù hợp, hoặc độ nhạy của chất lượng sinh với lựa chọn top-5.</p>
-      </div>
-      <div class="hbox">
-        <div class="hbox-label">Tại sao dùng LLM chấm điểm?</div>
-        <p>Sinh công thức là bài toán mở — không có đáp án chuẩn cố định. LLM chấm điểm giúp đánh giá nhanh ở quy mô lớn, nhưng không thay thế nghiên cứu người dùng thực sự.</p>
       </div>
     </div>
   </div>
